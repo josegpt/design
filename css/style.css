@@ -28,7 +28,6 @@ body {
 	font-family: sans-serif;
 	line-height: 1.6;
 	max-width: 92ch;
-	padding: 1rem;
 	margin-inline: auto;
 }
 
@@ -158,6 +157,7 @@ a[data-type=button] {
 	padding: .5rem 1rem;
 }
 
+body,
 article,
 fieldset {
 	padding: 1rem;
