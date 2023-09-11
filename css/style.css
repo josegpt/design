@@ -243,11 +243,11 @@ a[data-type=button][data-style=secondary] {
 
 .cover {
 	flex-direction: column;
-	min-block-size; 100vh;
+	min-block-size: 100vh;
 }
 
 .cover > :first-child:not(main) {
-	margin-block-start; 0;
+	margin-block-start: 0;
 }
 
 .cover > :last-child:not(main) {
