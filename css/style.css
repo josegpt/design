@@ -64,13 +64,13 @@ code {
 }
 
 code::-moz-selection {
-	background-color: var(--accent-color);
-	color: var(--primary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
 }
 
 code::selection {
-	background-color: var(--accent-color);
-	color: var(--primary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
 }
 
 ul {
