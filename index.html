@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<title>redhex / static</title>
+	<meta content="josegpt" name="author" />
+	<meta content="static files" name="description" />
+	<meta content="HTML, CSS, JSON, C, Go, Rust" name="keywords" />
+	<meta content="red" name="theme-color" />
+	<meta content="website" property="og:type" />
+	<meta content="redhex / static" property="og:title" />
+	<meta content="https://static.redhex.dev" property="og:url" />
+	<meta content="static files" property="og:description" />
+	<meta content="/img/ej@500x500.png" property="og:image" />
+	<link rel="icon" href="/img/dr.ico" type="image/x-icon" />
+	<link rel="preload stylesheet" type="text/css" as="style" href="/css/style.css" />
+</head>
+<body class="cover">
+	<header class="stack">
+		<section data-justify="space-between" data-align="center" class="cluster">
+			<a class="cluster" href="/">
+				<svg class="logo" width="30" height="30">
+					<rect width="30" height="30" />
+				</svg>
+			</a>
+			<nav>
+				<a href="/">Static</a>
+			</nav>
+		</section>
+		<section>
+			<a href="/">Static</a>
+		</section>
+		<form class="with-sidebar">
+			<input type="search" placeholder="Search..." />
+			<input data-style="secondary" type="submit" value="Search" />
+		</form>
+	</header>
+	<main class="stack">
+		<h1>Heading</h1>
+		<h2>Heading</h2>
+		<h3>Heading</h3>
+		<h4>Heading</h4>
+		<h5>Heading</h5>
+		<h6>Heading</h6>
+
+		<p>The base font is 16px over 1.6 line height (26px)</p>
+
+		<section>
+			<strong>Bolded</strong>
+			<em>Italicized</em>
+			<a>Colored</a>
+			<u>Underline</u>
+			<a href="#">Underline</a>
+		</section>
+
+		<section class="cluster">
+			<a data-type="button" href="#">Anchor Button</a>
+			<button>Button Element</button>
+			<input type="submit" value="Submit input" />
+			<input type="button" value="Button input" />
+		</section>
+
+		<section class="cluster">
+			<a data-type="button" data-style="secondary" href="#">Anchor Button</a>
+			<button data-style="secondary">Button Element</button>
+			<input data-style="secondary" type="submit" value="Submit input" />
+			<input data-style="secondary" type="button" value="Button input" />
+		</section>
+
+		<section class="grid">
+			<article>
+				<h4>This is an article</a>
+			</article>
+			<article>
+				<h4>This is an article</a>
+			</article>
+			<article>
+				<h4>This is an article</a>
+			</article>
+		</section>
+
+		<form class="stack">
+			<section class="grid">
+				<label>
+					<p>First Name</p>
+					<input type="text" placeholder="John" />
+				</label>
+				<label>
+					<p>Last Name</p>
+					<input type="text" placeholder="Doe" />
+				</label>
+				<label>
+					<p>Password</p>
+					<input type="password" placeholder="Password" />
+				</label>
+				<label>
+					<p>Cellphone</p>
+					<input type="tel" placeholder="Cellphone" />
+				</label>
+				<label>
+					<p>Age</p>
+					<input type="number" placeholder="Age" />
+				</label>
+			</section>
+			<fieldset class="grid">
+				<legend>Information</legend>
+				<label>
+					<p>Email</p>
+					<input type="email" placeholder="test@redhex.org" />
+				</label>
+				<label>
+					<p>Reason for contacting</p>
+					<select>
+						<option>Questions</option>
+					</select>
+				</label>
+			</fieldset>
+			<label>
+				<p>Message</p>
+				<textarea placeholder="Hi redhex"></textarea>
+			</label>
+			<section data-justify="space-between" data-align="center" class="cluster">
+				<section data-style="secondary" type="submit" value="submit" />
+					<input data-style="secondary" type="submit" value="submit" />
+					<input type="reset" />
+				</section>
+				<section class="cluster">
+					<label data-align="center" class="cluster">
+						<input name="radio" type="radio" />
+						<span>Radio</span>
+					</label>
+					<label data-align="center" class="cluster">
+						<input name="radio" type="radio" />
+						<span>Radio</span>
+					</label>
+				</section>
+				<label data-align="center" class="cluster">
+					<input type="checkbox" />
+					<span>Send a copy to yourself</span>
+				</label>
+			</section>
+		</form>
+
+		<section class="cluster">
+			<ul>
+				<li>Item 1</li>
+				<li>
+					Item 2
+					<ul>
+						<li>Item 2.1</li>
+						<li>Item 2.2</li>
+					</ul>
+				</li>
+				<li>Item 3</li>
+			</ul>
+			<ol>
+				<li>Item 1</li>
+				<li>
+					Item 2
+					<ul>
+						<li>Item 2.1</li>
+						<li>Item 2.2</li>
+					</ul>
+				</li>
+				<li>Item 3</li>
+			</ol>
+		</section>
+
+		<pre><code>.some-class {
+	background-color: red;
+}</code></pre>
+
+		<details class="stack">
+			<summary>Details</summary>
+			<p>Description</p>
+			<details class="stack">
+				<summary>Details</summary>
+				<p>Description</p>
+			</details>
+			<details class="stack">
+				<summary>Details</summary>
+				<p>Description</p>
+			</details>
+		</details>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Sex</th>
+					<th>Location</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-label="Name">John Doe</td>
+					<td data-label="Age">26</td>
+					<td data-label="Sex">Male</td>
+					<td data-label="Location">San Francisco</td>
+				</tr>
+				<tr>
+					<td data-label="Name">Jane Doe</td>
+					<td data-label="Age">22</td>
+					<td data-label="Sex">Female</td>
+					<td data-label="Location">Florida</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+	<footer class="stack">
+		<section class="grid">
+			<header class="stack">
+				<a href="/" data-align="center" class="cluster">
+					<svg class="logo" width="30" height="30">
+						<rect width="30" height="30" />
+					</svg>
+					<h3>redhex</h3>
+				</a>
+				<p>Building services.</p>
+			</header>
+		</section>
+		<section class="cluster">
+			<ul>
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Terms of Service</a></li>
+				<li><a href="#">License</a></li>
+				<li><a href="#">Source Code</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">Privacy</a></li>
+				<li><a href="#">Terms of Service</a></li>
+				<li><a href="#">License</a></li>
+				<li><a href="#">Source Code</a></li>
+			</ul>
+		</section>
+		<small data-justify="center" class="cluster">&copy;2023 redhex</small>
+	</footer>
+</body>
+</html>
