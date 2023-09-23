@@ -58,19 +58,7 @@ pre > code {
 }
 
 code {
-	background-color: var(--accent-color);
-	color: var(--secondary-color);
 	overflow: auto;;
-}
-
-code::-moz-selection {
-	background-color: var(--primary-color);
-	color: var(--secondary-color);
-}
-
-code::selection {
-	background-color: var(--primary-color);
-	color: var(--secondary-color);
 }
 
 ul {
@@ -96,6 +84,7 @@ table tr {
 	display: block;
 }
 
+code,
 article,
 fieldset,
 table tr {
@@ -268,6 +257,7 @@ a[data-type=button]:hover {
 	border: .1rem solid var(--accent-color);
 }
 
+code,
 button[data-style=secondary],
 input[type=submit][data-style=secondary],
 input[type=button][data-style=secondary],
