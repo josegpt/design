@@ -345,11 +345,6 @@ a[data-type=button][data-style=secondary] {
 	gap: 1rem;
 }
 
-.logo {
-	stroke: var(--accent-color);
-	fill: var(--accent-color);
-}
-
 .text-align\:center {
 	text-align: center;
 }
