@@ -105,6 +105,11 @@ input[type=checkbox]:checked {
 	border: .1rem solid var(--secondary-color);
 }
 
+article[data-style=secondary] {
+	border: .1rem dashed var(--accent-color);
+	box-shadow: none;
+}
+
 body,
 input,
 select,
