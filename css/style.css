@@ -34,12 +34,12 @@ body {
 
 ::-moz-selection {
 	background-color: var(--accent-color);
-	color: var(--primary-color);
+	color: var(--secondary-color);
 }
 
 ::selection {
 	background-color: var(--accent-color);
-	color: var(--primary-color);
+	color: var(--secondary-color);
 }
 
 a,
