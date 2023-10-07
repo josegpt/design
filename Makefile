@@ -8,7 +8,7 @@ static:
 	@cp -f index.html ${HTTPD_DIR}
 	@cp -R img css index.html ${HTTPD_DIR}
 
-install: static
+install: all
 
 uninstall:
 	@rm -rf ${HTTPD_DIR}
