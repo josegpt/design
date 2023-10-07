@@ -53,6 +53,11 @@ a:hover {
 	text-decoration-color: var(--accent-color);
 }
 
+u,
+a {
+	text-decoration-thickness: .2rem;
+}
+
 pre > code {
 	display: block;
 	white-space: pre;
@@ -104,11 +109,11 @@ table tr,
 a[data-type=button],
 input[type=radio]:checked,
 input[type=checkbox]:checked {
-	border: .1rem solid var(--secondary-color);
+	border: .2rem solid var(--secondary-color);
 }
 
 article[data-style=secondary] {
-	border: .1rem dashed var(--accent-color);
+	border: .2rem dashed var(--accent-color);
 	box-shadow: none;
 }
 
@@ -253,7 +258,7 @@ textarea:focus,
 textarea:hover,
 a[data-type=button]:focus,
 a[data-type=button]:hover {
-	border: .1rem solid var(--accent-color);
+	border: .2rem solid var(--accent-color);
 }
 
 code,
