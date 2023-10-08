@@ -310,7 +310,7 @@ a[data-type=button][data-style=secondary] {
 }
 
 .cover > * {
-	margin-block: 2rem;
+	margin-block: 1rem;
 }
 
 .with-sidebar > :first-child {
