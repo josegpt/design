@@ -3,19 +3,19 @@
 <head>
 	<meta charset="utf-8" />
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
-	<title>redhex / Static</title>
+	<title>RedHex / Static</title>
 	<meta content="josegpt" name="author" />
 	<meta content="static files" name="description" />
-	<meta content="HTML, CSS, JSON, C, Perl" name="keywords" />
+	<meta content="HTML, CSS, JSON, C, Perl, Go, Rust" name="keywords" />
 	<meta content="red" name="theme-color" />
 	<meta content="website" property="og:type" />
-	<meta content="redhex / Static" property="og:title" />
+	<meta content="RedHex / Static" property="og:title" />
 	<meta content="https://static.redhex.dev" property="og:url" />
 	<meta content="static files" property="og:description" />
 	<meta content="/img/ej@500x500.png" property="og:image" />
 	<link rel="icon" href="/img/redhex.svg" type="image/svg+xml" />
 	<link rel="mask-icon" href="/img/redhex.svg" color="red" type="image/svg+xml" />
-	<link rel="preload stylesheet" type="text/css" as="style" href="/css/style.css" />
+	<link rel="preload stylesheet" type="text/css" as="style" href="/css/redhex.css" />
 </head>
 <body class="cover">
 	<header class="stack">
@@ -23,33 +23,48 @@
 			<nav data-align="center" class="cluster">
 				<a class="cluster" href="/">
 					<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-						<rect width="30" height="30" fill="red" />
+						<rect width="30" height="30" rx="4" ry="4" fill="red" />
 					</svg>
 				</a>
-				<section>
+				<section class="cluster">
 					<a href="/">Static</a>
 				</section>
 			</nav>
 		</section>
 		<search>
-			<form class="with-sidebar">
+			<form>
 				<input type="search" placeholder="Search..." />
-				<input data-style="secondary" type="submit" value="Search" />
 			</form>
 		</search>
-		<article data-style="secondary">
-			This is an alert.
-		</article>
+		<section class="stack">
+			<article data-type="alert">
+				This is an alert.
+			</article>
+			<article data-type="alert" data-style="blue">
+				This is an alert.
+			</article>
+			<article data-type="alert" data-style="red">
+				This is an alert.
+			</article>
+			<article data-type="alert" data-style="yellow">
+				This is an alert.
+			</article>
+			<article data-type="alert" data-style="green">
+				This is an alert.
+			</article>
+		</section>
 	</header>
 	<main class="stack">
-		<h1>Heading</h1>
-		<h2>Heading</h2>
-		<h3>Heading</h3>
-		<h4>Heading</h4>
-		<h5>Heading</h5>
-		<h6>Heading</h6>
+		<section>
+			<h1>Heading</h1>
+			<h2>Heading</h2>
+			<h3>Heading</h3>
+			<h4>Heading</h4>
+			<h5>Heading</h5>
+			<h6>Heading</h6>
+		</section>
 
-		<p>The base font is 19px over 1.6 line height (31px)</p>
+		<p>The base font is 16px over 1.6 line height (26px)</p>
 
 		<section>
 			<strong>Bolded</strong>
@@ -60,28 +75,28 @@
 		</section>
 
 		<section class="cluster">
-			<a data-type="button" href="#">Anchor Button</a>
-			<button>Button Element</button>
+			<a data-type="button" href="#">Anchor button</a>
+			<button>Button element</button>
 			<input type="submit" value="Submit input" />
 			<input type="button" value="Button input" />
 		</section>
 
 		<section class="cluster">
-			<a data-type="button" data-style="secondary" href="#">Anchor Button</a>
-			<button data-style="secondary">Button Element</button>
+			<a data-type="button" data-style="secondary" href="#">Anchor button</a>
+			<button data-style="secondary">Button element</button>
 			<input data-style="secondary" type="submit" value="Submit input" />
 			<input data-style="secondary" type="button" value="Button input" />
 		</section>
 
 		<section class="grid">
 			<article>
-				<h4>This is an article</a>
+				<h6>This is an article</h6>
 			</article>
 			<article>
-				<h4>This is an article</a>
+				<h6>This is an article</h6>
 			</article>
 			<article>
-				<h4>This is an article</a>
+				<h6>This is an article</h6>
 			</article>
 		</section>
 
@@ -123,12 +138,12 @@
 			</fieldset>
 			<label>
 				<p>Message</p>
-				<textarea placeholder="Hi redhex"></textarea>
+				<textarea placeholder="Hi RedHex"></textarea>
 			</label>
 			<section data-justify="space-between" data-align="center" class="cluster">
 				<section data-style="secondary">
-					<input data-style="secondary" type="submit" value="submit" />
-					<input type="reset" />
+					<input type="submit" />
+					<input data-style="secondary" type="reset" />
 				</section>
 				<section class="cluster">
 					<label data-align="center" class="cluster">
@@ -215,32 +230,20 @@
 		</table>
 	</main>
 	<footer class="stack">
-		<section class="grid">
-			<header class="stack">
-				<a href="/" data-align="center" class="cluster">
-					<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-						<rect width="30" height="30" fill="red" />
-					</svg>
-					<h3>redhex</h3>
-				</a>
-				<p>Building services.</p>
-			</header>
+			<nav data-justify="center" class="cluster">
+				<small><a href="#">Privacy</a></small>
+				<small><a href="#">Terms of Service</a></small>
+				<small><a href="#">Status</a></small>
+				<small><a href="#">About</a></small>
+			</nav>
+		<section data-justify="center" data-align="center" class="cluster">
+			<a href="/" class="cluster">
+				<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+					<rect width="20" height="20" rx="3" ry="3" fill="red" />
+				</svg>
+			</a>
+			<small>&copy;2023 RedHex</small>
 		</section>
-		<section class="cluster">
-			<ul>
-				<li><a href="#">Privacy</a></li>
-				<li><a href="#">Terms of Service</a></li>
-				<li><a href="#">License</a></li>
-				<li><a href="#">Source Code</a></li>
-			</ul>
-			<ul>
-				<li><a href="#">Privacy</a></li>
-				<li><a href="#">Terms of Service</a></li>
-				<li><a href="#">License</a></li>
-				<li><a href="#">Source Code</a></li>
-			</ul>
-		</section>
-		<small data-justify="center" class="cluster">&copy;2023 redhex</small>
 	</footer>
 </body>
 </html>

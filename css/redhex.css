@@ -7,61 +7,102 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
+*:focus {
+	outline: none;
+}
+
 html {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
 }
 
 :root {
-	--primary-color: white;
-	--secondary-color: black;
-	--accent-color: red;
+	--primary-color-50: rgb(250, 250, 249);
+	--primary-color-100: rgb(245, 245, 244);
+	--primary-color-200: rgb(231, 229, 228);
+	--primary-color-300: rgb(214, 211, 209);
+	--primary-color-400: rgb(168, 162, 158);
+	--primary-color-500: rgb(120, 113, 108);
+	--primary-color-600: rgb(87, 83, 78);
+	--primary-color-700: rgb(68, 64, 60);
+	--primary-color-800: rgb(41, 37, 36);
+	--primary-color-900: rgb(28, 25, 23);
+	--primary-color-950: rgb(12, 10, 9);
+	--red-color: rgb(239, 68, 68);
+	--yellow-color: rgb(253, 224, 71);
+	--blue-color: rgb(14, 165, 233);
+	--green-color: rgb(34, 197, 94);
+	--border: .1rem;
+	--border-radius: .3rem;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
-		--primary-color: black;
-		--secondary-color: white;
+		--primary-color-50: rgb(12, 10, 9);
+		--primary-color-100: rgb(28, 25, 23);
+		--primary-color-200: rgb(41, 37, 36);
+		--primary-color-300: rgb(68, 64, 60);
+		--primary-color-400: rgb(87, 83, 78);
+		--primary-color-500: rgb(120, 113, 108);
+		--primary-color-600: rgb(168, 162, 158);
+		--primary-color-700: rgb(214, 211, 209);
+		--primary-color-800: rgb(231, 229, 228);
+		--primary-color-900: rgb(245, 245, 244);
+		--primary-color-950: rgb(250, 250, 249);
 	}
 }
 
 body {
 	font-family: sans-serif;
-	font-size: 1.2rem;
 	line-height: 1.6;
 	max-width: 92ch;
 	margin-inline: auto;
 }
 
 ::-moz-selection {
-	background-color: var(--accent-color);
-	color: var(--secondary-color);
+	background-color: var(--primary-color-500);
 }
 
 ::selection {
-	background-color: var(--accent-color);
-	color: var(--secondary-color);
+	background-color: var(--primary-color-500);
+}
+
+h1 {
+	font-size: 3.5em;
+}
+
+h2 {
+	font-size: 3em;
+}
+
+h3 {
+	font-size: 2.5em;
+}
+
+h4 {
+	font-size: 2em;
+}
+
+h5 {
+	font-size: 1.5em;
+}
+
+h6 {
+	font-size: 1em;
 }
 
 a,
 a:visited {
-	color: var(--secondary-color);
+	color: var(--blue-color);
 }
 
 a:focus,
 a:hover {
-	text-decoration-color: var(--accent-color);
-}
-
-u,
-a {
-	text-decoration-thickness: .2rem;
+	text-decoration: underline;
 }
 
 pre > code {
-	display: block;
 	white-space: pre;
-	font-size: 1rem;
 }
 
 code {
@@ -87,15 +128,13 @@ details details {
 
 label,
 table td,
-table tr {
+table tr,
+pre > code {
 	display: block;
 }
 
-code,
-article,
-fieldset,
-table tr {
-	box-shadow: .2rem .2rem var(--accent-color);
+label p {
+	margin-left: .4rem;
 }
 
 input,
@@ -109,12 +148,7 @@ table tr,
 a[data-type=button],
 input[type=radio]:checked,
 input[type=checkbox]:checked {
-	border: .2rem solid var(--secondary-color);
-}
-
-article[data-style=secondary] {
-	border: .2rem dashed var(--accent-color);
-	box-shadow: none;
+	border: var(--border) solid var(--primary-color-300);
 }
 
 body,
@@ -122,8 +156,8 @@ input,
 select,
 button,
 textarea {
-	background-color: var(--primary-color);
-	color: var(--secondary-color);
+	background-color: var(--primary-color-50);
+	color: var(--primary-color-900);
 }
 
 table,
@@ -132,13 +166,13 @@ textarea,
 input[type=tel],
 input[type=text],
 input[type=email],
+input[type=search],
 input[type=number],
 input[type=password] {
 	width: 100%;
 }
 
 table {
-	border-collapse: collapse;
 	border-spacing: 0;
 }
 
@@ -188,11 +222,7 @@ input[type=checkbox] {
 
 input[type=radio]:checked,
 input[type=checkbox]:checked {
-	background-color: var(--accent-color);
-}
-
-a[data-type=button] {
-	text-decoration: none;
+	background-color: var(--primary-color-500);
 }
 
 legend,
@@ -201,7 +231,6 @@ a[data-type=button] {
 }
 
 code,
-table,
 input,
 select,
 button,
@@ -224,8 +253,15 @@ input[type=reset],
 input[type=submit],
 input[type=button],
 a[data-type=button] {
-	font-weight: bold;
-	text-transform: uppercase;
+	color: inherit;
+}
+
+button[data-style="secondary"],
+input[type=reset][data-style="secondary"],
+input[type=submit][data-style="secondary"],
+input[type=button][data-style="secondary"],
+a[data-type=button][data-style="secondary"] {
+	background-color: transparent;
 }
 
 button,
@@ -238,13 +274,10 @@ a[data-type=button] {
 	user-select: none;
 }
 
-a:focus,
-input:focus,
-select:focus,
-button:focus,
-summary:focus,
-textarea:focus {
-	outline: none;
+a,
+a:visited,
+a[data-type=button] {
+	text-decoration: none;
 }
 
 input:focus,
@@ -259,16 +292,52 @@ textarea:focus,
 textarea:hover,
 a[data-type=button]:focus,
 a[data-type=button]:hover {
-	border: .2rem solid var(--accent-color);
+	border: var(--border) solid var(--primary-color-500);
 }
 
 code,
-button[data-style=secondary],
-input[type=submit][data-style=secondary],
-input[type=button][data-style=secondary],
-a[data-type=button][data-style=secondary] {
-	background-color: var(--secondary-color);
-	color: var(--primary-color);
+input,
+select,
+button,
+textarea,
+a[data-type=button],
+article[data-type=alert] {
+	background-color: var(--primary-color-100);
+}
+
+code,
+input,
+select,
+button,
+summary,
+article,
+fieldset,
+textarea,
+table tr,
+a[data-type=button] {
+	border-radius: var(--border-radius);
+}
+
+article[data-type=alert] {
+	border-left: .4rem solid var(--primary-color-300);
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+article[data-style=blue] {
+	border-color: var(--blue-color);
+}
+
+article[data-style=red] {
+	border-color: var(--red-color);
+}
+
+article[data-style=yellow] {
+	border-color: var(--yellow-color);
+}
+
+article[data-style=green] {
+	border-color: var(--green-color);
 }
 
 .grid {
@@ -314,13 +383,14 @@ a[data-type=button][data-style=secondary] {
 }
 
 .with-sidebar > :first-child {
-	flex-basis: 0;
-	flex-grow: 999;
-	min-inline-size: 70%;
+	flex-basis: 15rem;
+	flex-grow: 1;
 }
 
 .with-sidebar > :last-child {
-	flex-grow: 1;
+	flex-basis: 0;
+	flex-grow: 999;
+	min-inline-size: 70%;
 }
 
 .cluster,
@@ -341,7 +411,8 @@ a[data-type=button][data-style=secondary] {
 }
 
 .grid,
-.cluster {
+.cluster,
+.with-sidebar {
 	gap: 1rem;
 }
 
@@ -351,13 +422,18 @@ a[data-type=button][data-style=secondary] {
 
 @media screen and (min-width: 40em) {
 	table {
-		box-shadow: .2rem .2rem var(--accent-color);
+		border: var(--border) solid var(--primary-color-300);
+		border-radius: var(--border-radius);
 	}
 
 	table thead {
 		height: auto;
 		position: initial;
 		visibility: initial;
+	}
+
+	table td {
+		border-top: .1rem solid var(--primary-color-300);
 	}
 
 	table td {
