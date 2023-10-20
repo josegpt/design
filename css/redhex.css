@@ -17,38 +17,38 @@ html {
 }
 
 :root {
-	--primary-color-50: rgb(250, 250, 249);
-	--primary-color-100: rgb(245, 245, 244);
-	--primary-color-200: rgb(231, 229, 228);
-	--primary-color-300: rgb(214, 211, 209);
-	--primary-color-400: rgb(168, 162, 158);
-	--primary-color-500: rgb(120, 113, 108);
-	--primary-color-600: rgb(87, 83, 78);
-	--primary-color-700: rgb(68, 64, 60);
-	--primary-color-800: rgb(41, 37, 36);
-	--primary-color-900: rgb(28, 25, 23);
-	--primary-color-950: rgb(12, 10, 9);
-	--red-color: rgb(239, 68, 68);
-	--yellow-color: rgb(253, 224, 71);
-	--blue-color: rgb(14, 165, 233);
-	--green-color: rgb(34, 197, 94);
+	--primary-color-50: rgb(250 250 250);
+	--primary-color-100: rgb(245 245 245);
+	--primary-color-200: rgb(229 229 229);
+	--primary-color-300: rgb(212 212 212);
+	--primary-color-400: rgb(163 163 163);
+	--primary-color-500: rgb(115 115 115);
+	--primary-color-600: rgb(82 82 82);
+	--primary-color-700: rgb(64 64 64);
+	--primary-color-800: rgb(38 38 38);
+	--primary-color-900: rgb(23 23 23);
+	--primary-color-950: rgb(10 10 10);
+	--red-color: rgb(208 2 27);
+	--orange-color: rgb(255 165 0);
+	--blue-color: rgb(30 144 255);
+	--green-color: rgb(50 205 50);
 	--border: .1rem;
 	--border-radius: .3rem;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
-		--primary-color-50: rgb(12, 10, 9);
-		--primary-color-100: rgb(28, 25, 23);
-		--primary-color-200: rgb(41, 37, 36);
-		--primary-color-300: rgb(68, 64, 60);
-		--primary-color-400: rgb(87, 83, 78);
-		--primary-color-500: rgb(120, 113, 108);
-		--primary-color-600: rgb(168, 162, 158);
-		--primary-color-700: rgb(214, 211, 209);
-		--primary-color-800: rgb(231, 229, 228);
-		--primary-color-900: rgb(245, 245, 244);
-		--primary-color-950: rgb(250, 250, 249);
+		--primary-color-50: rgb(10 10 10);
+		--primary-color-100: rgb(23 23 23);
+		--primary-color-200: rgb(38 38 38);
+		--primary-color-300: rgb(64 64 64);
+		--primary-color-400: rgb(82 82 82);
+		--primary-color-500: rgb(115 115 115);
+		--primary-color-600: rgb(163 163 163);
+		--primary-color-700: rgb(212 212 212);
+		--primary-color-800: rgb(229 229 229);
+		--primary-color-900: rgb(245 245 245);
+		--primary-color-950: rgb(250 250 250);
 	}
 }
 
@@ -222,7 +222,7 @@ input[type=checkbox] {
 
 input[type=radio]:checked,
 input[type=checkbox]:checked {
-	background-color: var(--primary-color-500);
+	background-color: var(--red-color);
 }
 
 legend,
@@ -332,8 +332,8 @@ article[data-style=red] {
 	border-color: var(--red-color);
 }
 
-article[data-style=yellow] {
-	border-color: var(--yellow-color);
+article[data-style=orange] {
+	border-color: var(--orange-color);
 }
 
 article[data-style=green] {
