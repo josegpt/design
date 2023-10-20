@@ -203,10 +203,11 @@ select,
 button,
 textarea,
 a[data-type=button] {
-	-webkit-appearance: none;
 	border-radius: 0;
 	font-family: inherit;
 	font-size: inherit;
+	-webkit-appearance: none;
+	appearance: none;
 }
 
 input[type=radio] {
