@@ -335,7 +335,8 @@ article[data-style=green] {
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(min(32ch, 100%), 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(32ch, 100%), 1fr));
+	align-content: start;
 }
 
 .cluster {
