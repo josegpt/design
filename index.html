@@ -1,249 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta content="width=device-width, initial-scale=1" name="viewport" />
-	<title>RedHex / Static</title>
-	<meta content="josegpt" name="author" />
-	<meta content="static files" name="description" />
-	<meta content="HTML, CSS, JSON, C, Perl, Go, Rust" name="keywords" />
-	<meta content="#d0021b" name="theme-color" />
-	<meta content="website" property="og:type" />
-	<meta content="RedHex / Static" property="og:title" />
-	<meta content="https://static.redhex.dev" property="og:url" />
-	<meta content="static files" property="og:description" />
-	<meta content="/img/ej@500x500.png" property="og:image" />
-	<link rel="icon" href="/img/redhex.svg" type="image/svg+xml" />
-	<link rel="mask-icon" href="/img/redhex.svg" color="#d0021b" type="image/svg+xml" />
-	<link rel="preload stylesheet" type="text/css" as="style" href="/css/redhex.css" />
-</head>
+<meta charset="utf-8" />
+
+<title>RedHex / Static</title>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="robots" content="nofollow">
+<meta content="josegpt" name="author">
+<meta content="RedHex static files" name="description">
+<meta content="HTML, CSS, JSON, C, Perl, Go" name="keywords">
+<meta content="#d0021b" name="theme-color">
+<meta content="website" property="og:type">
+<meta content="RedHex / Static" property="og:title">
+<meta content="https://static.redhex.dev" property="og:url">
+<meta content="RedHex static files" property="og:description">
+<meta content="img/ej@500x500.png" property="og:image">
+<link rel="icon" href="img/redhex.svg">
+<link rel="mask-icon" href="img/redhex.svg" color="#d0021b">
+<link rel="preload stylesheet" type="text/css" as="style" href="css/style.css">
+
 <body class="cover">
-	<header class="stack">
-		<section class="cluster">
-			<nav data-align="center" class="cluster">
-				<a class="cluster" href="/">
-					<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-						<rect width="30" height="30" rx="4" ry="4" fill="#d0021b" />
-					</svg>
-				</a>
-				<section class="cluster">
-					<a href="/">Static</a>
-				</section>
-			</nav>
-		</section>
-		<search>
-			<form>
-				<input type="search" placeholder="Search..." />
-			</form>
-		</search>
-		<section class="stack">
-			<article data-type="alert">
-				This is an alert.
-			</article>
-			<article data-type="alert" data-style="blue">
-				This is an alert.
-			</article>
-			<article data-type="alert" data-style="red">
-				This is an alert.
-			</article>
-			<article data-type="alert" data-style="orange">
-				This is an alert.
-			</article>
-			<article data-type="alert" data-style="green">
-				This is an alert.
-			</article>
-		</section>
-	</header>
-	<main class="stack">
-		<section>
-			<h1>Heading</h1>
-			<h2>Heading</h2>
-			<h3>Heading</h3>
-			<h4>Heading</h4>
-			<h5>Heading</h5>
-			<h6>Heading</h6>
-		</section>
+<header class="stack">
 
-		<p>The base font is 16px over 1.6 line height (26px)</p>
+<nav data-align="center" class="cluster">
+<a class="cluster" href="/">
+<svg width="30" height="30">
+<rect width="30" height="30" fill="#d0021b">
+</svg>
+</a>
+<a href="/">Static</a>
+</nav>
 
-		<section>
-			<strong>Bolded</strong>
-			<em>Italicized</em>
-			<a>Colored</a>
-			<u>Underline</u>
-			<a href="#">Anchor</a>
-		</section>
+<search>
+<form>
+<input type="search" placeholder="Search..." />
+</form>
+</search>
 
-		<section class="cluster">
-			<a data-type="button" href="#">Anchor button</a>
-			<button>Button element</button>
-			<input type="submit" value="Submit input" />
-			<input type="button" value="Button input" />
-		</section>
+<section class="stack">
+<article data-type="alert">
+This is an alert.
+</article>
+<article data-type="alert" data-style="blue">
+This is an alert.
+</article>
+<article data-type="alert" data-style="red">
+This is an alert.
+</article>
+<article data-type="alert" data-style="orange">
+This is an alert.
+</article>
+<article data-type="alert" data-style="green">
+This is an alert.
+</article>
+</section>
+</header>
 
-		<section class="cluster">
-			<a data-type="button" data-style="secondary" href="#">Anchor button</a>
-			<button data-style="secondary">Button element</button>
-			<input data-style="secondary" type="submit" value="Submit input" />
-			<input data-style="secondary" type="button" value="Button input" />
-		</section>
+<main class="stack">
+<section>
+<h1>Heading</h1>
+<h2>Heading</h2>
+<h3>Heading</h3>
+<h4>Heading</h4>
+<h5>Heading</h5>
+<h6>Heading</h6>
+</section>
 
-		<section class="grid">
-			<article>
-				<h6>This is an article</h6>
-			</article>
-			<article>
-				<h6>This is an article</h6>
-			</article>
-			<article>
-				<h6>This is an article</h6>
-			</article>
-		</section>
+<p>The base font is 16px over 1.6 line height (26px)
 
-		<form class="stack">
-			<section class="grid">
-				<label>
-					<p>First Name</p>
-					<input type="text" placeholder="John" />
-				</label>
-				<label>
-					<p>Last Name</p>
-					<input type="text" placeholder="Doe" />
-				</label>
-				<label>
-					<p>Password</p>
-					<input type="password" placeholder="Password" />
-				</label>
-				<label>
-					<p>Cellphone</p>
-					<input type="tel" placeholder="Cellphone" />
-				</label>
-				<label>
-					<p>Age</p>
-					<input type="number" placeholder="Age" />
-				</label>
-			</section>
-			<fieldset class="grid">
-				<legend>Information</legend>
-				<label>
-					<p>Email</p>
-					<input type="email" placeholder="test@redhex.org" />
-				</label>
-				<label>
-					<p>Reason for contacting</p>
-					<select>
-						<option>Questions</option>
-					</select>
-				</label>
-			</fieldset>
-			<label>
-				<p>Message</p>
-				<textarea placeholder="Hi RedHex"></textarea>
-			</label>
-			<section data-justify="space-between" data-align="center" class="cluster">
-				<section data-style="secondary">
-					<input type="submit" />
-					<input data-style="secondary" type="reset" />
-				</section>
-				<section class="cluster">
-					<label data-align="center" class="cluster">
-						<input name="radio" type="radio" />
-						<span>Radio</span>
-					</label>
-					<label data-align="center" class="cluster">
-						<input name="radio" type="radio" />
-						<span>Radio</span>
-					</label>
-				</section>
-				<label data-align="center" class="cluster">
-					<input type="checkbox" />
-					<span>Send a copy to yourself</span>
-				</label>
-			</section>
-		</form>
+<section>
+<strong>Bolded</strong>
+<em>Italicized</em>
+<a>Colored</a>
+<u>Underline</u>
+<a href="#">Anchor</a>
+</section>
 
-		<section class="cluster">
-			<ul>
-				<li>Item 1</li>
-				<li>
-					Item 2
-					<ul>
-						<li>Item 2.1</li>
-						<li>Item 2.2</li>
-					</ul>
-				</li>
-				<li>Item 3</li>
-			</ul>
-			<ol>
-				<li>Item 1</li>
-				<li>
-					Item 2
-					<ul>
-						<li>Item 2.1</li>
-						<li>Item 2.2</li>
-					</ul>
-				</li>
-				<li>Item 3</li>
-			</ol>
-		</section>
+<section class="cluster">
+<a data-type="button" href="#">Anchor button</a>
+<button>Button element</button>
+<input type="submit" value="Submit input">
+<input type="button" value="Button input">
+</section>
 
-		<pre><code>.some-class {
+<section class="cluster">
+<a data-type="button" data-style="secondary" href="#">Anchor button</a>
+<button data-style="secondary">Button element</button>
+<input data-style="secondary" type="submit" value="Submit input">
+<input data-style="secondary" type="button" value="Button input">
+</section>
+
+<section>
+<a href="#" data-type="tag">Anchor tag</a>
+<a href="#" data-type="tag">Anchor tag</a>
+</section>
+
+<section class="grid">
+<article>
+<h6>This is an article</h6>
+</article>
+<article>
+<h6>This is an article</h6>
+</article>
+<article>
+<h6>This is an article</h6>
+</article>
+</section>
+
+<form class="stack">
+<section class="grid">
+<label>
+<p>First Name</p>
+<input type="text" placeholder="John">
+</label>
+<label>
+<p>Last Name</p>
+<input type="text" placeholder="Doe">
+</label>
+<label>
+<p>Password</p>
+<input type="password" placeholder="Password">
+</label>
+<label>
+<p>Cellphone</p>
+<input type="tel" placeholder="Cellphone">
+</label>
+<label>
+<p>Age</p>
+<input type="number" placeholder="Age">
+</label>
+</section>
+<fieldset class="grid">
+<legend>Information</legend>
+<label>
+<p>Email</p>
+<input type="email" placeholder="test@redhex.org">
+</label>
+<label>
+<p>Reason for contacting</p>
+<select>
+<option>Questions
+</select>
+</label>
+</fieldset>
+<label>
+<p>Message</p>
+<textarea placeholder="Hi RedHex"></textarea>
+</label>
+<footer data-justify="space-between" data-align="center" class="cluster">
+<section data-style="secondary">
+<input type="submit">
+<input data-style="secondary" type="reset">
+</section>
+<section class="cluster">
+<label data-align="center" class="cluster">
+<input name="radio" type="radio">
+<span>Radio</span>
+</label>
+<label data-align="center" class="cluster">
+<input name="radio" type="radio">
+<span>Radio</span>
+</label>
+</section>
+<label data-align="center" class="cluster">
+<input type="checkbox">
+<span>Send a copy to yourself</span>
+</label>
+</footer>
+</form>
+
+<section class="cluster">
+<ul>
+<li>Item 1
+<li>Item 2
+ <ul>
+ <li>Item 2.1
+ <li>Item 2.2
+ </ul>
+<li>Item 3
+</ul>
+<ol>
+<li>Item 1
+<li>Item 2
+ <ul>
+ <li>Item 2.1
+ <li>Item 2.2
+ </ul>
+<li>Item 3
+</ol>
+</section>
+
+<pre><code>.some-class {
 	background-color: red;
 }</code></pre>
 
-		<details class="stack">
-			<summary>Details</summary>
-			<p>Description</p>
-			<details class="stack">
-				<summary>Details</summary>
-				<p>Description</p>
-			</details>
-			<details class="stack">
-				<summary>Details</summary>
-				<p>Description</p>
-			</details>
-		</details>
+<details class="stack">
+<summary>Details</summary>
+<p>Description
+ <details class="stack">
+ <summary>Details</summary>
+ <p>Description
+ </details>
+ <details class="stack">
+ <summary>Details</summary>
+ <p>Description
+ </details>
+</details>
 
-		<table>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Age</th>
-					<th>Sex</th>
-					<th>Location</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td data-label="Name">John Doe</td>
-					<td data-label="Age">26</td>
-					<td data-label="Sex">Male</td>
-					<td data-label="Location">San Francisco</td>
-				</tr>
-				<tr>
-					<td data-label="Name">Jane Doe</td>
-					<td data-label="Age">22</td>
-					<td data-label="Sex">Female</td>
-					<td data-label="Location">Florida</td>
-				</tr>
-			</tbody>
-		</table>
-	</main>
-	<footer class="stack">
-			<nav data-justify="center" class="cluster">
-				<small><a href="#">Privacy</a></small>
-				<small><a href="#">Terms of Service</a></small>
-				<small><a href="#">Status</a></small>
-				<small><a href="#">About</a></small>
-			</nav>
-		<section data-justify="center" data-align="center" class="cluster">
-			<a href="/" class="cluster">
-				<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-					<rect width="20" height="20" rx="3" ry="3" fill="#d0021b" />
-				</svg>
-			</a>
-			<small>&copy;2023 RedHex</small>
-		</section>
-	</footer>
-</body>
-</html>
+<table>
+<thead>
+<tr>
+<th>Name
+<th>Age
+<th>Sex
+<th>Location
+<tbody>
+<tr>
+<td data-label="Name">John Doe
+<td data-label="Age">26
+<td data-label="Sex">Male
+<td data-label="Location">San Francisco
+<tr>
+<td data-label="Name">Jane Doe
+<td data-label="Age">22
+<td data-label="Sex">Female
+<td data-label="Location">Florida
+</tbody>
+</table>
+</main>
+
+<footer class="stack">
+<nav data-justify="center" class="cluster">
+<small><a href="#">Privacy</a></small>
+<small><a href="#">Terms of Service</a></small>
+<small><a href="#">Status</a></small>
+<small><a href="#">About</a></small>
+</nav>
+
+<section data-justify="center" data-align="center" class="cluster">
+<a href="/" class="cluster">
+<svg width="20" height="20">
+<rect width="20" height="20" fill="#d0021b">
+</svg>
+</a>
+<small>&copy;2023 RedHex</small>
+</section>
+</footer>

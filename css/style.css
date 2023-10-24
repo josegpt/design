@@ -33,7 +33,6 @@ html {
 	--blue-color: rgb(30 144 255);
 	--green-color: rgb(50 205 50);
 	--border: .1rem;
-	--border-radius: .3rem;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -88,11 +87,13 @@ h5 {
 }
 
 h6 {
-	font-size: 1em;
+	font-size: 1.25em;
 }
 
 a,
-a:visited {
+a:visited,
+a[data-type=tag]:focus,
+a[data-type=tag]:hover {
 	color: var(--blue-color);
 }
 
@@ -145,6 +146,7 @@ summary,
 textarea,
 fieldset,
 table tr,
+a[data-type=tag],
 a[data-type=button],
 input[type=radio]:checked,
 input[type=checkbox]:checked {
@@ -173,6 +175,7 @@ input[type=password] {
 }
 
 table {
+	border-collapse: collapse;
 	border-spacing: 0;
 }
 
@@ -277,6 +280,7 @@ a[data-type=button] {
 
 a,
 a:visited,
+a[data-type=tag],
 a[data-type=button] {
 	text-decoration: none;
 }
@@ -301,30 +305,18 @@ input,
 select,
 button,
 textarea,
-a[data-type=button],
-article[data-type=alert] {
+a[data-type=button] {
 	background-color: var(--primary-color-100);
 }
 
-code,
-input,
-select,
-button,
-summary,
-article,
-fieldset,
-textarea,
-table tr,
-a[data-type=button] {
-	border-radius: var(--border-radius);
+a[data-type=tag] {
+	color: var(--primary-color-600);
+	padding-inline: .2rem;
+	font-size: .8em;
 }
 
-article[data-type=alert] {
-	border-left: .4rem solid var(--primary-color-300);
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
+a[data-type=tag]:focus,
+a[data-type=tag]:hover,
 article[data-style=blue] {
 	border-color: var(--blue-color);
 }
@@ -422,19 +414,10 @@ article[data-style=green] {
 }
 
 @media screen and (min-width: 40em) {
-	table {
-		border: var(--border) solid var(--primary-color-300);
-		border-radius: var(--border-radius);
-	}
-
 	table thead {
 		height: auto;
 		position: initial;
 		visibility: initial;
-	}
-
-	table td {
-		border-top: .1rem solid var(--primary-color-300);
 	}
 
 	table td {
