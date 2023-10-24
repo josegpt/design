@@ -356,10 +356,6 @@ article[data-style=green] {
 	align-items: center;
 }
 
-.cluster[data-direction=column] {
-	flex-direction: column;
-}
-
 .cover {
 	min-block-size: 100vh;
 }
