@@ -1,16 +1,16 @@
 PREFIX ?=	${DESTDIR}/var/www
-HTTPD_DIR =	${PREFIX}/static
+HTDOCS_DIR =	${PREFIX}/htdocs
+STATIC_DIR =	${HTDOCS_DIR}/static
 
 all: static
 
 static:
-	@mkdir -p ${HTTPD_DIR}
-	@cp -f index.html ${HTTPD_DIR}
-	@cp -R img css index.html ${HTTPD_DIR}
+	@mkdir -p ${STATIC_DIR}
+	@cp -Rp img css *.html ${STATIC_DIR}
 
 install: all
 
 uninstall:
-	@rm -rf ${HTTPD_DIR}
+	@rm -r ${STATIC_DIR}
 
 .PHONY: all static install uninstall
