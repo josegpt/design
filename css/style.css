@@ -32,7 +32,6 @@ html {
 	--orange-color: rgb(255 165 0);
 	--blue-color: rgb(30 144 255);
 	--green-color: rgb(50 205 50);
-	--border: .1rem;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -111,7 +110,7 @@ code {
 }
 
 ul {
-	list-style: square inside;
+	list-style: circle inside;
 }
 
 ol {
@@ -150,7 +149,30 @@ a[data-type=tag],
 a[data-type=button],
 input[type=radio]:checked,
 input[type=checkbox]:checked {
-	border: var(--border) solid var(--primary-color-300);
+	border: max(1px, .0625rem) solid var(--primary-color-300);
+}
+
+code,
+input,
+select,
+button,
+article,
+summary,
+textarea,
+fieldset,
+table tr,
+a[data-type=tag],
+a[data-type=button] {
+	border-radius: .3rem;
+}
+
+button,
+a[data-type=tag],
+input[type=reset],
+input[type=submit],
+input[type=button],
+a[data-type=button] {
+	border-radius: 4rem;
 }
 
 body,
@@ -175,7 +197,6 @@ input[type=password] {
 }
 
 table {
-	border-collapse: collapse;
 	border-spacing: 0;
 }
 
@@ -206,7 +227,6 @@ select,
 button,
 textarea,
 a[data-type=button] {
-	border-radius: 0;
 	font-family: inherit;
 	font-size: inherit;
 	-webkit-appearance: none;
@@ -297,7 +317,7 @@ textarea:focus,
 textarea:hover,
 a[data-type=button]:focus,
 a[data-type=button]:hover {
-	border: var(--border) solid var(--primary-color-500);
+	border-color: var(--primary-color-500);
 }
 
 code,
@@ -415,6 +435,11 @@ article[data-style=green] {
 }
 
 @media screen and (min-width: 40em) {
+	table {
+		border-radius: .3rem;
+		border: max(1px, .0625rem) solid var(--primary-color-300);
+	}
+
 	table thead {
 		height: auto;
 		position: initial;
