@@ -17,71 +17,53 @@ html {
 }
 
 :root {
-	--primary-color: white;
-	--secondary-color: black;
-	--accent-color: rgb(208 2 27);
+	--primary-color: #f0f6f0;
+	--secondary-color: #222323;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
-		--primary-color: black;
-		--secondary-color: white;
+		--primary-color: #222323;
+		--secondary-color: #f0f6f0;
 	}
 }
 
 body {
-	font-family: sans-serif;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica,
+		Arial, sans-serif;
 	line-height: 1.6;
 	max-width: 92ch;
 	margin-inline: auto;
 }
 
-::-moz-selection {
-	background-color: var(--accent-color);
-}
-
-::selection {
-	background-color: var(--accent-color);
-}
-
 h1 {
-	font-size: 3em;
+	font-size: xxx-large;
 }
 
 h2 {
-	font-size: 2.5em;
+	font-size: xx-large;
 }
 
 h3 {
-	font-size: 2em;
+	font-size: x-large;
 }
 
 h4 {
-	font-size: 1.5em;
+	font-size: large;
 }
 
 h5 {
-	font-size: 1.25em;
+	font-size: medium;
 }
 
 h6 {
-	font-size: 1em;
+	font-size: small;
 }
 
-a {
-	color: var(--accent-color);
-}
-
+a,
 a:link,
-a:visited,
-a[data-type=tag]:focus,
-a[data-type=tag]:hover {
+a:visited {
 	color: inherit;
-}
-
-a:focus,
-a:hover {
-	text-decoration-color: var(--accent-color);
 }
 
 pre > code {
@@ -89,7 +71,7 @@ pre > code {
 }
 
 code {
-	overflow: auto;;
+	overflow: auto;
 }
 
 ul {
@@ -124,11 +106,30 @@ summary,
 textarea,
 fieldset,
 table tr,
-a[data-type=tag],
-a[data-type=button],
 input[type=radio]:checked,
 input[type=checkbox]:checked {
-	border: max(1px, .0625rem) solid var(--secondary-color);
+	border: .1rem solid var(--secondary-color);
+}
+
+input,
+select,
+button,
+summary,
+textarea {
+	transition: ease-out .1s;
+}
+
+input:focus,
+input:hover,
+select:focus,
+select:hover,
+button:focus,
+button:hover,
+summary:focus,
+summary:hover,
+textarea:focus,
+textarea:hover {
+	box-shadow: .1rem .1rem 0 var(--secondary-color);
 }
 
 body,
@@ -144,7 +145,7 @@ table,
 select,
 textarea,
 input[type=tel],
-input[type=date]
+input[type=date],
 input[type=text],
 input[type=email],
 input[type=search],
@@ -154,11 +155,11 @@ input[type=password] {
 }
 
 input:required {
-	border-color: var(--accent-color);
+	border-style: double;
 }
 
 input:disabled {
-	filter: invert(70%);
+	border-style: dashed;
 }
 
 table {
@@ -191,8 +192,7 @@ table tr + tr,
 input,
 select,
 button,
-textarea,
-a[data-type=button] {
+textarea {
 	border-radius: 0;
 	font-family: inherit;
 	font-size: inherit;
@@ -208,17 +208,12 @@ input[type=radio],
 input[type=checkbox] {
 	height: 1rem;
 	width: 1rem;
-	padding: .5rem;
+	padding: .1rem;
 }
 
 input[type=radio]:checked,
 input[type=checkbox]:checked {
-	background-color: var(--accent-color);
-}
-
-legend,
-a[data-type=button] {
-	line-height: normal;
+	background-color: var(--secondary-color);
 }
 
 code,
@@ -228,71 +223,42 @@ button,
 summary,
 textarea,
 table th,
-table td,
-a[data-type=button] {
+table td {
 	padding: .5rem 1rem;
 }
 
 body,
-article,
 fieldset {
 	padding: 1rem;
 }
 
 code,
 button,
+::selection,
 input[type=reset],
 input[type=submit],
-input[type=button],
-a[data-type=button] {
-	background-color: var(--secondary-color);
+input[type=button] {
 	color: var(--primary-color);
+	background-color: var(--secondary-color);
 }
 
-button[data-style="secondary"],
-input[type=reset][data-style="secondary"],
-input[type=submit][data-style="secondary"],
-input[type=button][data-style="secondary"],
-a[data-type=button][data-style="secondary"] {
+button[data-style=secondary],
+input[type=reset][data-style=secondary],
+input[type=submit][data-style=secondary],
+input[type=button][data-style=secondary] {
 	background-color: transparent;
 	color: var(--secondary-color);
 }
 
 button,
 summary,
+input[type=radio],
 input[type=reset],
 input[type=submit],
 input[type=button],
-a[data-type=button] {
+input[type=checkbox] {
 	cursor: pointer;
 	user-select: none;
-}
-
-a[data-type=tag],
-a[data-type=button] {
-	text-decoration: none;
-}
-
-input:focus,
-input:hover,
-select:focus,
-select:hover,
-button:focus,
-button:hover,
-summary:focus,
-summary:hover,
-textarea:focus,
-textarea:hover,
-a[data-type=tag]:focus,
-a[data-type=tag]:hover,
-a[data-type=button]:focus,
-a[data-type=button]:hover {
-	border-color: var(--accent-color);
-}
-
-a[data-type=tag] {
-	padding-inline: .2rem;
-	font-size: .8em;
 }
 
 .grid {
@@ -339,14 +305,14 @@ a[data-type=tag] {
 }
 
 .with-sidebar > :first-child {
-	flex-basis: 15rem;
-	flex-grow: 1;
+	flex-basis: 0;
+	flex-grow: 999;
+	min-inline-size: 60%;
 }
 
 .with-sidebar > :last-child {
-	flex-basis: 0;
-	flex-grow: 999;
-	min-inline-size: 70%;
+	flex-basis: 10rem;
+	flex-grow: 1;
 }
 
 .cluster,

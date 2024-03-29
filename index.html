@@ -7,22 +7,22 @@
 <meta name="robots" content="nofollow">
 <meta content="josegpt" name="author">
 <meta content="RedHex static files" name="description">
-<meta content="HTML, CSS, JSON, C" name="keywords">
-<meta content="#d0021b" name="theme-color">
+<meta content="C, HTML, CSS, JSON" name="keywords">
+<meta content="red" name="theme-color">
 <meta content="website" property="og:type">
 <meta content="RedHex &sol; Static" property="og:title">
 <meta content="https://static.redhex.dev" property="og:url">
 <meta content="RedHex static files" property="og:description">
-<meta content="img/ej@500x500.png" property="og:image">
-<link rel="icon" href="img/redhex.svg">
-<link rel="mask-icon" href="img/redhex.svg" color="#d0021b">
-<link rel="preload stylesheet" type="text/css" as="style" href="css/style.css">
+<meta content="/img/ej@500x500.png" property="og:image">
+<link rel="icon" href="/img/redhex.svg">
+<link rel="mask-icon" href="/img/redhex.svg" color="red">
+<link rel="preload stylesheet" type="text/css" as="style" href="/css/style.css">
 
 <body class="cover">
 <header class="stack">
 <nav data-align="center" class="cluster">
 <a class="cluster" href="/">
-<img height="30" width="30" alt="Logo" src="img/redhex.svg">
+<img height="30" width="30" alt="Logo" src="/img/redhex.svg">
 </a>
 <section>
 <span>Static</span>
@@ -30,15 +30,11 @@
 </nav>
 
 <search>
-<form>
-<input type="search" placeholder="Search..." />
+<form class="with-sidebar">
+<input type="search" placeholder="Search...">
+<input type="submit" value="Search">
 </form>
 </search>
-
-<section class="stack">
-<article>This is an alert.</article>
-</section>
-</header>
 
 <main class="stack">
 <section>
@@ -55,34 +51,20 @@
 <section>
 <strong>Bolded</strong>
 <em>Italicized</em>
-<a>Colored</a>
 <u>Underline</u>
 <a href="#">Anchor</a>
 </section>
 
 <section class="cluster">
-<a data-type="button" href="#">Anchor button</a>
 <button>Button element</button>
 <input type="submit" value="Submit input">
 <input type="button" value="Button input">
 </section>
 
 <section class="cluster">
-<a data-type="button" data-style="secondary" href="#">Anchor button</a>
 <button data-style="secondary">Button element</button>
 <input data-style="secondary" type="submit" value="Submit input">
 <input data-style="secondary" type="button" value="Button input">
-</section>
-
-<section>
-<a href="#" data-type="tag">Anchor tag</a>
-<a href="#" data-type="tag">Anchor tag</a>
-</section>
-
-<section class="grid">
-<article><h6>This is an article</h6></article>
-<article><h6>This is an article</h6></article>
-<article><h6>This is an article</h6></article>
 </section>
 
 <form class="stack">
@@ -107,6 +89,10 @@
 <p>Age</p>
 <input type="number" placeholder="Age">
 </label>
+<label>
+<p>Date</p>
+<input type="date">
+</label>
 </section>
 <fieldset class="grid">
 <legend>Information</legend>
@@ -115,12 +101,12 @@
 <input type="email" placeholder="test@redhex.org">
 </label>
 <label>
-<p>Email <em>Required</em></p>
-<input type="email" value="test@redhex.org" required>
+<p>Password <b>Required</b></p>
+<input type="password" placeholder="p@ssw0rd" required>
 </label>
 <label>
 <p>Email <em>Disabled</em></p>
-<input type="email" value="test@redhex.org" disabled>
+<input type="email" placeholder="test@redhex.org" disabled>
 </label>
 <label>
 <p>Reason for contacting</p>
@@ -225,8 +211,8 @@
 
 <section data-justify="center" data-align="center" class="cluster">
 <a href="/" class="cluster">
-<img height="20" width="20" alt="Logo" src="img/redhex.svg">
+<img height="20" width="20" alt="Logo" src="/img/redhex.svg">
 </a>
-<small>&copy;2023 RedHex</small>
+<small>&copy;2024 RedHex</small>
 </section>
 </footer>
