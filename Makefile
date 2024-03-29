@@ -1,6 +1,6 @@
-PREFIX ?=	${DESTDIR}/var/www
-HTDOCS_DIR =	${PREFIX}/htdocs
-STATIC_DIR =	${HTDOCS_DIR}/static
+PREFIX?=	${DESTDIR}/var/www
+HTDOCS_DIR=	${PREFIX}/htdocs
+STATIC_DIR=	${HTDOCS_DIR}/static
 
 all: static
 
