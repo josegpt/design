@@ -17,22 +17,30 @@ html {
 }
 
 :root {
-	--primary-color: #f0f6f0;
-	--secondary-color: #222323;
+	--color-0: #ffffff;
+	--color-1: #eeeeee;
+	--color-2: #bdbdbd;
+	--color-3: #000000;
+	--red-0:   #d90000;
+	--blue-0:  #0000ff;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
-		--primary-color: #222323;
-		--secondary-color: #f0f6f0;
+		--color-0: #000000;
+		--color-1: #333333;
+		--color-2: #777777;
+		--color-3: #ffffff;
+		--blue-0:  #56c8ff;
 	}
 }
 
+/* exception */
+
 body {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica,
-		Arial, sans-serif;
+	font-family: sans-serif;
 	line-height: 1.6;
-	max-width: 92ch;
+	max-width: 80ch;
 	margin-inline: auto;
 }
 
@@ -63,7 +71,12 @@ h6 {
 a,
 a:link,
 a:visited {
-	color: inherit;
+	text-decoration: none;
+}
+
+a[data-style=logo] {
+	font-family: monospace;
+	font-size: 1.5em;
 }
 
 pre > code {
@@ -75,7 +88,7 @@ code {
 }
 
 ul {
-	list-style: square inside;
+	list-style: circle inside;
 }
 
 ol {
@@ -98,17 +111,48 @@ pre > code {
 	display: block;
 }
 
-input,
-select,
 button,
-article,
-summary,
-textarea,
+input[type=reset],
+input[type=submit],
+input[type=button] {
+	font-weight: bold;
+}
+
+fieldset > legend {
+	padding-inline: 1rem;
+}
+
+label > p {
+	margin-left: 1rem;
+}
+
+code,
+input[type=checkbox] {
+	border-radius: .2rem;
+}
+
 fieldset,
 table tr,
-input[type=radio]:checked,
-input[type=checkbox]:checked {
-	border: .1rem solid var(--secondary-color);
+textarea,
+pre > code,
+input[type=radio] {
+	border-radius: 1rem;
+}
+
+button,
+select,
+summary,
+input[type=tel],
+input[type=date],
+input[type=text],
+input[type=email],
+input[type=reset],
+input[type=number],
+input[type=submit],
+input[type=button],
+input[type=search],
+input[type=password] {
+	border-radius: 2rem;
 }
 
 input,
@@ -116,29 +160,7 @@ select,
 button,
 summary,
 textarea {
-	transition: ease-out .1s;
-}
-
-input:focus,
-input:hover,
-select:focus,
-select:hover,
-button:focus,
-button:hover,
-summary:focus,
-summary:hover,
-textarea:focus,
-textarea:hover {
-	box-shadow: .1rem .1rem 0 var(--secondary-color);
-}
-
-body,
-input,
-select,
-button,
-textarea {
-	background-color: var(--primary-color);
-	color: var(--secondary-color);
+	transition: all .2s ease-in-out;
 }
 
 table,
@@ -163,7 +185,7 @@ input:disabled {
 }
 
 table {
-	border-collapse: collapse;
+	border-collapse: separate;
 	border-spacing: 0;
 }
 
@@ -193,15 +215,10 @@ input,
 select,
 button,
 textarea {
-	border-radius: 0;
 	font-family: inherit;
 	font-size: inherit;
 	-webkit-appearance: none;
 	appearance: none;
-}
-
-input[type=radio] {
-	border-radius: 50%;
 }
 
 input[type=radio],
@@ -211,43 +228,24 @@ input[type=checkbox] {
 	padding: .1rem;
 }
 
-input[type=radio]:checked,
-input[type=checkbox]:checked {
-	background-color: var(--secondary-color);
+code {
+	padding: .1rem .3rem;
 }
 
-code,
 input,
 select,
 button,
 summary,
 textarea,
 table th,
-table td {
+table td,
+pre > code {
 	padding: .5rem 1rem;
 }
 
 body,
 fieldset {
 	padding: 1rem;
-}
-
-code,
-button,
-::selection,
-input[type=reset],
-input[type=submit],
-input[type=button] {
-	color: var(--primary-color);
-	background-color: var(--secondary-color);
-}
-
-button[data-style=secondary],
-input[type=reset][data-style=secondary],
-input[type=submit][data-style=secondary],
-input[type=button][data-style=secondary] {
-	background-color: transparent;
-	color: var(--secondary-color);
 }
 
 button,
@@ -260,6 +258,89 @@ input[type=checkbox] {
 	cursor: pointer;
 	user-select: none;
 }
+
+/* focus/hover exception */
+
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+
+input:focus,
+input:hover,
+select:focus,
+select:hover,
+button:focus,
+button:hover,
+summary:focus,
+summary:hover,
+textarea:focus,
+textarea:hover {
+	border-color: var(--color-2);
+}
+
+/* color */
+
+body,
+select,
+textarea,
+input[type=tel],
+input[type=text],
+input[type=date],
+input[type=email],
+input[type=number],
+input[type=search],
+input[type=password],
+button[data-style=secondary],
+input[type=submit][data-style=secondary],
+input[type=button][data-style=secondary],
+input[type=reset][data-style=secondary] {
+	color: var(--color-3);
+	background-color: var(--color-0);
+}
+
+::selection {
+	color: var(--color-0);
+	background-color: var(--color-3);
+}
+
+a,
+a:link,
+a:visited {
+	color: var(--blue-0);
+}
+
+a[data-style=logo] {
+	color: var(--red-0);
+}
+
+code,
+button,
+input[type=submit],
+input[type=button] {
+	color: inherit;
+	background-color: var(--color-1);
+}
+
+input,
+select,
+button,
+article,
+summary,
+textarea,
+fieldset,
+table tr,
+input[type=radio]:checked,
+input[type=checkbox]:checked {
+	border: .175rem solid var(--color-1);
+}
+
+input[type=radio]:checked,
+input[type=checkbox]:checked {
+	background-color: var(--color-3);
+}
+
+/* layout */
 
 .grid {
 	display: grid;
@@ -338,9 +419,13 @@ input[type=checkbox] {
 	gap: 1rem;
 }
 
+/* helper */
+
 .text-align\:center {
 	text-align: center;
 }
+
+/* adjustment */
 
 @media screen and (min-width: 40em) {
 	table thead {
@@ -349,8 +434,11 @@ input[type=checkbox] {
 		visibility: initial;
 	}
 
+	table th,
 	table td {
 		display: table-cell;
+		border-bottom: .175rem solid var(--color-1);
+		padding: 1rem;
 	}
 
 	table tr {
