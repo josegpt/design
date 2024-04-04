@@ -7,10 +7,6 @@
 	-webkit-tap-highlight-color: transparent;
 }
 
-*:focus {
-	outline: none;
-}
-
 html {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
@@ -68,10 +64,11 @@ h6 {
 	font-size: small;
 }
 
+u,
 a,
 a:link,
 a:visited {
-	text-decoration: none;
+	text-decoration-thickness: 0.175rem;
 }
 
 a[data-style=logo] {
@@ -153,14 +150,6 @@ input[type=button],
 input[type=search],
 input[type=password] {
 	border-radius: 2rem;
-}
-
-input,
-select,
-button,
-summary,
-textarea {
-	transition: all .2s ease-in-out;
 }
 
 table,
@@ -261,21 +250,26 @@ input[type=checkbox] {
 
 /* focus/hover exception */
 
-a:hover,
-a:focus {
-	text-decoration: underline;
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+textarea:focus-visible {
+	outline: .175rem dotted var(--color-3);
+	outline-offset: .1rem;
 }
 
-input:focus,
 input:hover,
-select:focus,
+input:focus,
 select:hover,
-button:focus,
+select:focus,
 button:hover,
-summary:focus,
+button:focus,
 summary:hover,
-textarea:focus,
-textarea:hover {
+summary:focus,
+textarea:hover,
+textarea:focus {
 	border-color: var(--color-2);
 }
 
