@@ -1,3 +1,19 @@
+/*
+ * Copyright (c) 2024 Jose G Perez Taveras <josegpt27@gmail.com>
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
+
 *,
 *::before,
 *::after {
@@ -16,9 +32,9 @@ html {
 	--color-0: #ffffff;
 	--color-1: #eeeeee;
 	--color-2: #bdbdbd;
-	--color-3: #000000;
+	--color-3: #aaaaaa;
+	--comp:    #000000;
 	--red-0:   #d90000;
-	--blue-0:  #0000ff;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -26,8 +42,8 @@ html {
 		--color-0: #000000;
 		--color-1: #333333;
 		--color-2: #777777;
-		--color-3: #ffffff;
-		--blue-0:  #56c8ff;
+		--color-3: #999999;;
+		--comp:    #ffffff;
 	}
 }
 
@@ -68,7 +84,7 @@ u,
 a,
 a:link,
 a:visited {
-	text-decoration-thickness: 0.175rem;
+	text-underline-offset: .3rem;
 }
 
 a[data-style=logo] {
@@ -82,6 +98,7 @@ pre > code {
 
 code {
 	overflow: auto;
+	padding: .1rem .3rem;
 }
 
 ul {
@@ -108,11 +125,20 @@ pre > code {
 	display: block;
 }
 
+input,
+select,
+button,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+}
+
 button,
 input[type=reset],
 input[type=submit],
 input[type=button] {
 	font-weight: bold;
+	font-size: .9rem;
 }
 
 fieldset > legend {
@@ -121,6 +147,7 @@ fieldset > legend {
 
 label > p {
 	margin-left: 1rem;
+	margin-bottom: .3rem;
 }
 
 code,
@@ -200,14 +227,6 @@ table tr + tr,
 	margin-block-start: 1rem;
 }
 
-input,
-select,
-button,
-textarea {
-	font-family: inherit;
-	font-size: inherit;
-}
-
 input[type=radio],
 input[type=checkbox] {
 	height: 1rem;
@@ -215,10 +234,6 @@ input[type=checkbox] {
 	padding: .1rem;
 	appearance: none;
 	-webkit-appearance: none;
-}
-
-code {
-	padding: .1rem .3rem;
 }
 
 input,
@@ -248,34 +263,46 @@ input[type=checkbox] {
 	user-select: none;
 }
 
-/* focus/hover exception */
-
 a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 button:focus-visible,
 summary:focus-visible,
 textarea:focus-visible {
-	outline: .175rem dotted var(--color-3);
-	outline-offset: .1rem;
-}
-
-input:hover,
-input:focus,
-select:hover,
-select:focus,
-button:hover,
-button:focus,
-summary:hover,
-summary:focus,
-textarea:hover,
-textarea:focus {
-	border-color: var(--color-2);
+	outline: .175rem solid var(--comp);
+	outline-offset: .3rem;
 }
 
 /* color */
 
-body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+select,
+summary,
+textarea,
+table td,
+input[type=tel],
+input[type=text],
+input[type=date],
+input[type=email],
+input[type=reset],
+input[type=number],
+input[type=search],
+input[type=submit],
+input[type=button],
+input[type=password],
+button[data-style=secondary],
+input[type=submit][data-style=secondary],
+input[type=button][data-style=secondary],
+input[type=reset][data-style=secondary] {
+	color: var(--comp);
+}
+
 select,
 textarea,
 input[type=tel],
@@ -289,19 +316,107 @@ button[data-style=secondary],
 input[type=submit][data-style=secondary],
 input[type=button][data-style=secondary],
 input[type=reset][data-style=secondary] {
+	background-color: transparent;
+}
+
+select:valid,
+textarea:valid,
+input[type=tel]:valid,
+input[type=text]:valid,
+input[type=date]:valid,
+input[type=email]:valid,
+input[type=radio]:valid,
+input[type=number]:valid,
+input[type=search]:valid,
+input[type=checkbox]:valid,
+input[type=password]:valid {
+	border-color: var(--color-1);
+}
+
+select:invalid,
+textarea:invalid,
+input[type=tel]:invalid,
+input[type=text]:invalid,
+input[type=date]:invalid,
+input[type=email]:invalid,
+input[type=radio]:invalid,
+input[type=number]:invalid,
+input[type=search]:invalid,
+input[type=checkbox]:invalid,
+input[type=password]:invalid {
+	border-color: var(--comp);
+}
+
+button:hover,
+button:focus,
+summary:hover,
+summary:focus,
+select:valid:hover,
+select:valid:focus,
+select:invalid:hover,
+select:invalid:focus,
+textarea:valid:hover,
+textarea:valid:focus,
+textarea:invalid:hover,
+textarea:invalid:focus,
+input[type=reset]:hover,
+input[type=reset]:focus,
+input[type=button]:hover,
+input[type=button]:focus,
+input[type=submit]:hover,
+input[type=submit]:focus,
+input[type=tel]:valid:hover,
+input[type=tel]:valid:focus,
+input[type=text]:valid:hover,
+input[type=text]:valid:focus,
+input[type=date]:valid:hover,
+input[type=date]:valid:focus,
+input[type=email]:valid:hover,
+input[type=email]:valid:focus,
+input[type=radio]:valid:hover,
+input[type=radio]:valid:focus,
+input[type=number]:valid:hover,
+input[type=number]:valid:focus,
+input[type=search]:valid:hover,
+input[type=search]:valid:focus,
+input[type=checkbox]:valid:hover,
+input[type=checkbox]:valid:focus,
+input[type=password]:valid:hover,
+input[type=password]:valid:focus,
+input[type=tel]:invalid:hover,
+input[type=tel]:invalid:focus,
+input[type=text]:invalid:hover,
+input[type=text]:invalid:focus,
+input[type=date]:invalid:hover,
+input[type=date]:invalid:focus,
+input[type=email]:invalid:hover,
+input[type=email]:invalid:focus,
+input[type=radio]:invalid:hover,
+input[type=radio]:invalid:focus,
+input[type=number]:invalid:hover,
+input[type=number]:invalid:focus,
+input[type=search]:invalid:hover,
+input[type=search]:invalid:focus,
+input[type=checkbox]:invalid:hover,
+input[type=checkbox]:invalid:focus,
+input[type=password]:invalid:hover,
+input[type=password]:invalid:focus {
+	border-color: var(--color-2);
+}
+
+body {
 	color: var(--color-3);
 	background-color: var(--color-0);
 }
 
 ::selection {
-	color: var(--color-0);
 	background-color: var(--color-3);
 }
 
 a,
 a:link,
 a:visited {
-	color: var(--blue-0);
+	color: var(--comp);
 }
 
 a[data-style=logo] {
@@ -309,10 +424,13 @@ a[data-style=logo] {
 }
 
 code,
+::selection {
+	color: var(--color-0);
+}
+
 button,
 input[type=submit],
 input[type=button] {
-	color: inherit;
 	background-color: var(--color-1);
 }
 
@@ -329,9 +447,10 @@ input[type=checkbox]:checked {
 	border: .175rem solid var(--color-1);
 }
 
+code,
 input[type=radio]:checked,
 input[type=checkbox]:checked {
-	background-color: var(--color-3);
+	background-color: var(--comp);
 }
 
 /* layout */
@@ -431,7 +550,7 @@ input[type=checkbox]:checked {
 	table th,
 	table td {
 		display: table-cell;
-		border-bottom: .175rem solid var(--color-1);
+		border-bottom: .0675rem solid var(--color-1);
 		padding: 1rem;
 	}
 
