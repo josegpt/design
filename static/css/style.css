@@ -329,6 +329,10 @@ input[type=checkbox] {
 	user-select: none;
 }
 
+small {
+	font-family: monospace;
+}
+
 body {
 	color: var(--color-600);
 	background-color: var(--color-50);
