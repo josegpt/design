@@ -1,7 +1,7 @@
 PREFIX?=	${DESTDIR}/var/www
 HTDOCSDIR=	${PREFIX}/htdocs
 
-all: install
+all: static
 
 static:
 	mkdir -p ${HTDOCSDIR}
