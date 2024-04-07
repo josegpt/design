@@ -14,14 +14,16 @@
 <meta content="https://redhex.net" property="og:url">
 <meta content="0x $HTTP_ERROR" property="og:description">
 <meta content="/static/img/banner.png" property="og:image">
-<link rel="icon" href="/static/img/favicon.svg">
-<link rel="mask-icon" href="/static/img/favicon.svg" color="#d90000">
+<link rel="icon" href="/static/img/logo.svg">
+<link rel="mask-icon" href="/static/img/logo.svg" color="#d90000">
 <link rel="preload stylesheet" type="text/css" as="style" href="/static/css/style.css">
 
 <body class="cover">
 <header class="stack">
 <nav data-align="center" class="cluster">
-<a data-style="logo" href="/">0x</a>
+<a href="/">
+<img height="30" width="30" src="/static/img/logo.svg" alt="Logo">
+</a>
 <div>
 <span>$HTTP_ERROR</span>
 </div>
@@ -30,10 +32,8 @@
 
 <main data-justify="center" data-align="center" class="cluster">
 <section class="text-align:center stack">
-<hgroup>
 <h1>$RESPONSE_CODE</h1>
-<h5>$HTTP_ERROR</h5>
-</hgroup>
+<p>$HTTP_ERROR
 <p><a href="/">Go to the main page</a>.
 </section>
 </main>
@@ -44,6 +44,6 @@
 </nav>
 
 <dvi data-justify="center" class="cluster">
-<small>&copy;2024 0x</small>
+<small>0x &copy; 2024</small>
 </section>
 </footer>

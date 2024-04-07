@@ -1,0 +1,477 @@
+/*
+ * Copyright (c) 2024 Jose G Perez Taveras <josegpt27@gmail.com>
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: transparent;
+}
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+:root {
+	--color-50: rgb(250 250 250);
+	--color-100: rgb(245 245 245);
+	--color-200: rgb(229 229 229);
+	--color-300: rgb(212 212 212);
+	--color-400: rgb(163 163 163);
+	--color-500: rgb(115 115 115);
+	--color-600: rgb(82 82 82);
+	--color-700: rgb(64 64 64);
+	--color-800: rgb(38 38 38);
+	--color-900: rgb(23 23 23);
+	--color-950: rgb(10 10 10);
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+	:root {
+		--color-50: rgb(10 10 10);
+		--color-100: rgb(23 23 23);
+		--color-200: rgb(38 38 38);
+		--color-300: rgb(64 64 64);
+		--color-400: rgb(82 82 82);
+		--color-500: rgb(115 115 115);
+		--color-600: rgb(163 163 163);
+		--color-700: rgb(212 212 212);
+		--color-800: rgb(229 229 229);
+		--color-900: rgb(245 245 245);
+		--color-950: rgb(250 250 250);
+	}
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(32ch, 100%), 1fr));
+	align-content: start;
+}
+
+.cluster {
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.cluster[data-justify=space-between] {
+	justify-content: space-between;
+}
+
+.cluster[data-justify=center] {
+	justify-content: center;
+}
+
+.cluster[data-align=center] {
+	align-items: center;
+}
+
+.cover {
+	min-block-size: 100vh;
+}
+
+.cover > :first-child:not(main) {
+	margin-block-start: 0;
+}
+
+.cover > :last-child:not(main) {
+	margin-block-end: 0;
+}
+
+.cover > main {
+	flex: 1;
+}
+
+.cover > * {
+	margin-block: 1rem;
+}
+
+.with-sidebar > :first-child {
+	flex-basis: 0;
+	flex-grow: 999;
+	min-inline-size: 60%;
+}
+
+.with-sidebar > :last-child {
+	flex-basis: 10rem;
+	flex-grow: 1;
+}
+
+.cluster,
+.with-sidebar {
+	flex-wrap: wrap;
+}
+
+.cover,
+.stack,
+.cluster,
+.with-sidebar {
+	display: flex;
+}
+
+.cover,
+.stack {
+	flex-direction: column;
+}
+
+.grid,
+.cluster,
+.with-sidebar {
+	gap: 1rem;
+}
+
+.text-align\:center {
+	text-align: center;
+}
+
+table th,
+table td::before,
+.text-transform\:uppercase {
+	text-transform: uppercase;
+}
+
+.bold,
+button,
+input[type=reset],
+input[type=submit],
+input[type=button] {
+	font-weight: bold;
+}
+
+.light,
+table th,
+table td::before {
+	font-weight: 300;
+}
+
+body {
+	font-family: sans-serif;
+	line-height: 1.6;
+	max-width: 80ch;
+	margin-inline: auto;
+}
+
+h1 {
+	font-size: xxx-large;
+}
+
+h2 {
+	font-size: xx-large;
+}
+
+h3 {
+	font-size: x-large;
+}
+
+h4 {
+	font-size: large;
+}
+
+h5 {
+	font-size: medium;
+}
+
+h6 {
+	font-size: small;
+}
+
+u,
+a,
+a:link,
+a:visited {
+	text-underline-offset: .3rem;
+}
+
+pre > code {
+	white-space: pre;
+}
+
+code {
+	overflow: auto;
+	padding: .1rem .3rem;
+}
+
+ul {
+	list-style: circle inside;
+}
+
+ol {
+	list-style: decimal inside;
+}
+
+ol ol,
+ol ul,
+ul ul,
+ul ol,
+details p,
+details details {
+	margin-inline: 2rem;
+}
+
+label,
+table td,
+table tr,
+pre > code {
+	display: block;
+}
+
+input,
+select,
+button,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+fieldset > legend {
+	padding-inline: 1rem;
+}
+
+label > p {
+	margin-left: 1rem;
+	margin-bottom: .2rem;
+}
+
+fieldset,
+table tr,
+textarea,
+pre > code {
+	border-radius: 1rem;
+}
+
+input,
+button,
+select,
+summary {
+	border-radius: 2rem;
+}
+
+code,
+input[type=checkbox] {
+	border-radius: .2rem;
+}
+
+input,
+table,
+select,
+textarea {
+	width: 100%;
+}
+
+input[type=submit],
+input[type=button],
+input[type="reset"] {
+	width: auto;
+}
+
+input:required {
+	border-style: double;
+}
+
+input:disabled {
+	border-style: dashed;
+}
+
+input[type=radio],
+input[type=checkbox] {
+	height: 1rem;
+	width: 1rem;
+	padding: .1rem;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+input,
+select,
+summary,
+textarea,
+table th,
+pre > code {
+	padding: .5rem 1rem;
+}
+
+button,
+input[type=reset],
+input[type=submit],
+input[type=button] {
+	padding: .5rem 2rem;
+}
+
+body,
+table td,
+fieldset {
+	padding: 1rem;
+}
+
+button,
+summary,
+input[type=radio],
+input[type=reset],
+input[type=submit],
+input[type=button],
+input[type=checkbox] {
+	cursor: pointer;
+	user-select: none;
+}
+
+body {
+	color: var(--color-600);
+	background-color: var(--color-50);
+}
+
+::selection {
+	color: var(--color-50);
+	background-color: var(--color-700);
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+code,
+input,
+button,
+a:link,
+select,
+summary,
+textarea,
+table td,
+a:visited {
+	color: var(--color-950);
+}
+
+code,
+button,
+input[type=reset],
+input[type=submit],
+input[type=button] {
+	background-color: var(--color-200);
+}
+
+input,
+select,
+textarea,
+input[data-style=secondary],
+button[data-style=secondary] {
+	background-color: transparent;
+}
+
+input[type=radio]:checked,
+input[type=checkbox]:checked {
+	background-color: var(--color-950);
+}
+
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+textarea:focus-visible {
+	outline: .175rem solid var(--color-950);
+	outline-offset: .2rem;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+	border-color: var(--color-700);
+}
+
+input:hover,
+input:focus,
+select:hover,
+select:focus,
+button:hover,
+button:focus,
+summary:hover,
+summary:focus,
+textarea:hover,
+textarea:focus {
+	border-color: var(--color-500);
+}
+
+input,
+select,
+button,
+article,
+summary,
+textarea,
+fieldset,
+table tr {
+	border: .175rem solid var(--color-200);
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+table thead {
+	height: 0;
+	position: absolute;
+	visibility: hidden;
+	overflow: hidden;
+}
+
+table td {
+	text-align: right;
+}
+
+table td::before {
+	content: attr(data-label);
+	float: left;
+	color: var(--color-600);
+}
+
+table tr + tr,
+.stack > * + * {
+	margin-block-start: 1rem;
+}
+
+@media screen and (min-width: 40em) {
+	table thead {
+		height: auto;
+		position: initial;
+		visibility: initial;
+	}
+
+	table th,
+	table td {
+		display: table-cell;
+		border-bottom: .175rem solid var(--color-200);
+		padding: 1rem;
+	}
+
+	table tr {
+		margin-block-start: 0;
+		box-shadow: none;
+		display: table-row;
+	}
+
+	table td::before {
+		content: "";
+	}
+
+	table tr,
+	table td {
+		text-align: left;
+	}
+}
