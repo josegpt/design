@@ -60,7 +60,7 @@ html {
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(32ch, 100%), 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(24ch, 100%), 1fr));
 	align-content: start;
 }
 
@@ -73,10 +73,12 @@ html {
 	justify-content: space-between;
 }
 
+a[data-style=icon],
 .cluster[data-justify=center] {
 	justify-content: center;
 }
 
+a[data-style=icon],
 .cluster[data-align=center] {
 	align-items: center;
 }
@@ -109,10 +111,15 @@ html {
 
 .with-sidebar > :last-child {
 	flex-basis: 10rem;
+}
+
+.switcher > *,
+.with-sidebar > :last-child {
 	flex-grow: 1;
 }
 
 .cluster,
+.switcher,
 .with-sidebar {
 	flex-wrap: wrap;
 }
@@ -120,7 +127,9 @@ html {
 .cover,
 .stack,
 .cluster,
-.with-sidebar {
+.switcher,
+.with-sidebar,
+a[data-style=icon] {
 	display: flex;
 }
 
@@ -131,12 +140,26 @@ html {
 
 .grid,
 .cluster,
+.switcher,
 .with-sidebar {
 	gap: 1rem;
 }
 
-.text-align\:center {
+.switcher > * {
+	flex-basis: calc((25rem - 100%) * 999);
+}
+
+.switcher > :first-child {
+	flex-basis: 25%;
+}
+
+.text-align\:center,
+a[data-type=button] {
 	text-align: center;
+}
+
+a[data-type=button] {
+	text-decoration: none;
 }
 
 table th,
@@ -145,15 +168,14 @@ table td::before,
 	text-transform: uppercase;
 }
 
-.bold,
 button,
 input[type=reset],
 input[type=submit],
-input[type=button] {
+input[type=button],
+a[data-type=button] {
 	font-weight: bold;
 }
 
-.light,
 table th,
 table td::before {
 	font-weight: 300;
@@ -219,6 +241,8 @@ ol ul,
 ul ul,
 ul ol,
 details p,
+details ul,
+details ol,
 details details {
 	margin-inline: 2rem;
 }
@@ -254,10 +278,12 @@ pre > code {
 	border-radius: 1rem;
 }
 
+img,
 input,
 button,
 select,
-summary {
+summary,
+a[data-type=button] {
 	border-radius: 2rem;
 }
 
@@ -266,6 +292,11 @@ input[type=checkbox] {
 	border-radius: .2rem;
 }
 
+img {
+	height: auto;
+}
+
+img,
 input,
 table,
 select,
@@ -275,7 +306,8 @@ textarea {
 
 input[type=submit],
 input[type=button],
-input[type="reset"] {
+input[type=reset],
+a[data-type=button] {
 	width: auto;
 }
 
@@ -301,6 +333,7 @@ select,
 summary,
 textarea,
 table th,
+table td,
 pre > code {
 	padding: .5rem 1rem;
 }
@@ -308,12 +341,12 @@ pre > code {
 button,
 input[type=reset],
 input[type=submit],
-input[type=button] {
+input[type=button],
+a[data-type=button] {
 	padding: .5rem 2rem;
 }
 
 body,
-table td,
 fieldset {
 	padding: 1rem;
 }
@@ -324,6 +357,7 @@ input[type=radio],
 input[type=reset],
 input[type=submit],
 input[type=button],
+a[data-type=button],
 input[type=checkbox] {
 	cursor: pointer;
 	user-select: none;
@@ -358,7 +392,8 @@ select,
 summary,
 textarea,
 table td,
-a:visited {
+a:visited,
+a[data-type=button] {
 	color: var(--color-950);
 }
 
@@ -366,7 +401,8 @@ code,
 button,
 input[type=reset],
 input[type=submit],
-input[type=button] {
+input[type=button],
+a[data-type=button] {
 	background-color: var(--color-200);
 }
 
@@ -374,8 +410,20 @@ input,
 select,
 textarea,
 input[data-style=secondary],
-button[data-style=secondary] {
+button[data-style=secondary],
+a[data-type=button][data-style=secondary] {
 	background-color: transparent;
+}
+
+a[data-style=icon] {
+	height: 2.5rem;
+	width: 2.5rem;
+	padding: 0;
+}
+
+a[data-style=icon] svg {
+	height: 2.5ch;
+	width: 2.5ch;
 }
 
 input[type=radio]:checked,
@@ -388,9 +436,10 @@ input:focus-visible,
 select:focus-visible,
 button:focus-visible,
 summary:focus-visible,
-textarea:focus-visible {
-	outline: .175rem solid var(--color-950);
-	outline-offset: .2rem;
+textarea:focus-visible,
+a[data-type=button]:focus-visible {
+	outline: 0.175rem solid var(--color-950);
+	outline-offset: 0.2rem;
 }
 
 input:invalid,
@@ -408,7 +457,9 @@ button:focus,
 summary:hover,
 summary:focus,
 textarea:hover,
-textarea:focus {
+textarea:focus,
+a[data-type=button]:hover,
+a[data-type=button]:focus {
 	border-color: var(--color-500);
 }
 
@@ -418,7 +469,8 @@ button,
 summary,
 textarea,
 fieldset,
-table tr {
+table tr,
+a[data-type=button] {
 	border: .175rem solid var(--color-200);
 }
 
