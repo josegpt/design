@@ -311,7 +311,9 @@ a[data-type=button] {
 	width: auto;
 }
 
-input:required {
+input:required,
+select:required,
+textarea:required {
 	border-style: double;
 }
 
