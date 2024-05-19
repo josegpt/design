@@ -28,6 +28,14 @@ html {
 	scroll-behavior: smooth;
 }
 
+input,
+select,
+button,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+}
+
 :root {
 	--color-50: rgb(250 250 250);
 	--color-100: rgb(245 245 245);
@@ -40,6 +48,7 @@ html {
 	--color-800: rgb(38 38 38);
 	--color-900: rgb(23 23 23);
 	--color-950: rgb(10 10 10);
+	--color-blue: rgb(0 0 255);
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -55,6 +64,7 @@ html {
 		--color-800: rgb(229 229 229);
 		--color-900: rgb(245 245 245);
 		--color-950: rgb(250 250 250);
+		--color-blue: rgb(66 135 245);
 	}
 }
 
@@ -73,12 +83,10 @@ html {
 	justify-content: space-between;
 }
 
-a[data-style=icon],
 .cluster[data-justify=center] {
 	justify-content: center;
 }
 
-a[data-style=icon],
 .cluster[data-align=center] {
 	align-items: center;
 }
@@ -128,8 +136,7 @@ a[data-style=icon],
 .stack,
 .cluster,
 .switcher,
-.with-sidebar,
-a[data-style=icon] {
+.with-sidebar {
 	display: flex;
 }
 
@@ -159,32 +166,36 @@ a[data-type=button] {
 }
 
 a[data-type=button] {
+	line-height: normal;
 	text-decoration: none;
 }
 
+button,
 table th,
 table td::before,
+input[type=reset],
+input[type=submit],
+input[type=button],
+a[data-type=button],
 .text-transform\:uppercase {
 	text-transform: uppercase;
 }
 
 button,
+table th,
+table td::before,
 input[type=reset],
 input[type=submit],
 input[type=button],
 a[data-type=button] {
+	letter-spacing: 0.05rem;
 	font-weight: bold;
-}
-
-table th,
-table td::before {
-	font-weight: 300;
 }
 
 body {
 	font-family: sans-serif;
 	line-height: 1.6;
-	max-width: 80ch;
+	max-width: 117ch;
 	margin-inline: auto;
 }
 
@@ -208,15 +219,25 @@ h5 {
 	font-size: medium;
 }
 
-h6 {
+h6,
+button,
+table th,
+table td::before,
+input[type=reset],
+input[type=submit],
+input[type=button],
+a[data-type=button] {
 	font-size: small;
 }
 
 u,
-a,
+a {
+	text-underline-offset: .3rem;
+}
+
 a:link,
 a:visited {
-	text-underline-offset: .3rem;
+	color: var(--color-blue);
 }
 
 pre > code {
@@ -229,7 +250,7 @@ code {
 }
 
 ul {
-	list-style: circle inside;
+	list-style: square inside;
 }
 
 ol {
@@ -254,49 +275,10 @@ pre > code {
 	display: block;
 }
 
-input,
-select,
-button,
-textarea {
-	font-family: inherit;
-	font-size: inherit;
-}
-
 fieldset > legend {
 	padding-inline: 1rem;
 }
 
-label > p {
-	margin-left: 1rem;
-	margin-bottom: .2rem;
-}
-
-fieldset,
-table tr,
-textarea,
-pre > code {
-	border-radius: 1rem;
-}
-
-img,
-input,
-button,
-select,
-summary,
-a[data-type=button] {
-	border-radius: 2rem;
-}
-
-code,
-input[type=checkbox] {
-	border-radius: .2rem;
-}
-
-img {
-	height: auto;
-}
-
-img,
 input,
 table,
 select,
@@ -330,6 +312,10 @@ input[type=checkbox] {
 	-webkit-appearance: none;
 }
 
+input[type=radio] {
+	border-radius: 50%;
+}
+
 input,
 select,
 summary,
@@ -345,7 +331,7 @@ input[type=reset],
 input[type=submit],
 input[type=button],
 a[data-type=button] {
-	padding: .5rem 2rem;
+	padding: .85rem 2rem;
 }
 
 body,
@@ -365,47 +351,21 @@ input[type=checkbox] {
 	user-select: none;
 }
 
-small {
-	font-family: monospace;
-}
-
 body {
-	color: var(--color-600);
+	color: var(--color-950);
 	background-color: var(--color-50);
 }
 
-::selection {
-	color: var(--color-50);
-	background-color: var(--color-700);
-}
-
-a,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-code,
-input,
-button,
-a:link,
-select,
-summary,
-textarea,
-table td,
-a:visited,
-a[data-type=button] {
-	color: var(--color-950);
-}
 
 code,
 button,
+::selection,
 input[type=reset],
 input[type=submit],
 input[type=button],
 a[data-type=button] {
-	background-color: var(--color-200);
+	color: var(--color-50);
+	background-color: var(--color-950);
 }
 
 input,
@@ -414,18 +374,8 @@ textarea,
 input[data-style=secondary],
 button[data-style=secondary],
 a[data-type=button][data-style=secondary] {
+	color: var(--color-950);
 	background-color: transparent;
-}
-
-a[data-style=icon] {
-	height: 2.5rem;
-	width: 2.5rem;
-	padding: 0;
-}
-
-a[data-style=icon] svg {
-	height: 2.5ch;
-	width: 2.5ch;
 }
 
 input[type=radio]:checked,
@@ -440,8 +390,8 @@ button:focus-visible,
 summary:focus-visible,
 textarea:focus-visible,
 a[data-type=button]:focus-visible {
-	outline: 0.175rem solid var(--color-950);
-	outline-offset: 0.2rem;
+	outline: .175rem solid var(--color-950);
+	outline-offset: .2rem;
 }
 
 input:invalid,
@@ -473,7 +423,7 @@ textarea,
 fieldset,
 table tr,
 a[data-type=button] {
-	border: .175rem solid var(--color-200);
+	border: .1rem solid var(--color-200);
 }
 
 table {
@@ -495,7 +445,6 @@ table td {
 table td::before {
 	content: attr(data-label);
 	float: left;
-	color: var(--color-600);
 }
 
 table tr + tr,
@@ -513,7 +462,7 @@ table tr + tr,
 	table th,
 	table td {
 		display: table-cell;
-		border-bottom: .175rem solid var(--color-200);
+		border-bottom: .1rem solid var(--color-200);
 		padding: 1rem;
 	}
 
