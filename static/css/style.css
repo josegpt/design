@@ -21,6 +21,9 @@
 	margin: 0;
 	padding: 0;
 	-webkit-tap-highlight-color: transparent;
+	text-transform: lowercase;
+	font-family: inherit;
+	font-size: inherit;
 }
 
 :root {
@@ -38,14 +41,6 @@
 html {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-}
-
-input,
-select,
-button,
-textarea {
-	font-family: inherit;
-	font-size: inherit;
 }
 
 a[data-type="button"] {
@@ -71,7 +66,6 @@ body {
 	max-width: 80ch;
 	font-size: 1.125rem;
 	margin-inline: auto;
-	text-transform: lowercase;
 }
 
 h1 {
