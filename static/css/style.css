@@ -21,20 +21,20 @@
 	margin: 0;
 	padding: 0;
 	-webkit-tap-highlight-color: transparent;
-	text-transform: lowercase;
 	font-family: inherit;
 	font-size: inherit;
 }
 
 :root {
-	--primary-color: #ff1919;
-	--secondary-color: #000000;
+	--primary-color: #f0f6f0;
+	--secondary-color: #222323;
+	--interactive-color: #d0021b;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
 	:root {
-		--primary-color: #000000;
-		--secondary-color: #ff1919;
+		--primary-color: #222323;
+		--secondary-color: #f0f6f0;
 	}
 }
 
@@ -93,16 +93,21 @@ h6 {
 }
 
 u,
-a,
-a:link,
-a:visited {
+a {
 	color: inherit;
 	text-underline-offset: .2rem;
 	text-decoration-thickness: .1rem;
 }
 
+a,
+a:link,
+a:visited {
+	text-decoration-color: var(--interactive-color);
+}
+
 u {
 	text-decoration-style: dotted;
+	text-decoration-color: var(--secondary-color);
 }
 
 pre > code {
@@ -250,10 +255,22 @@ fieldset,
 table tr,
 a[data-type="button"] {
 	border: .125rem solid var(--secondary-color);
+}
+
+input,
+select,
+button,
+summary,
+textarea,
+a[data-type="button"] {
+	box-shadow: .1rem .1rem 0 var(--interactive-color),
+		    .2rem .2rem 0 var(--interactive-color);
+}
+
+table tr,
+fieldset {
 	box-shadow: .1rem .1rem 0 var(--secondary-color),
-		    .2rem .2rem 0 var(--secondary-color),
-		    .3rem .3rem 0 var(--secondary-color),
-		    .4rem .4rem 0 var(--secondary-color);
+		    .2rem .2rem 0 var(--secondary-color);
 }
 
 input:hover,
@@ -275,9 +292,8 @@ a[data-type="button"]:hover,
 a[data-type="button"]:focus,
 a[data-type="button"]:focus-visible {
 	outline: none;
-	transform: translate(.2rem, .2rem);
-	box-shadow: .1rem .1rem 0 var(--secondary-color),
-		    .2rem .2rem 0 var(--secondary-color);
+	transform: translate(.1rem, .1rem);
+	box-shadow: .1rem .1rem 0 var(--secondary-color);
 }
 
 a:focus-visible {
@@ -321,9 +337,7 @@ table tr + tr,
 	table {
 		border: .125rem solid var(--secondary-color);
 		box-shadow: .1rem .1rem 0 var(--secondary-color),
-			    .2rem .2rem 0 var(--secondary-color),
-			    .3rem .3rem 0 var(--secondary-color),
-			    .4rem .4rem 0 var(--secondary-color);
+			    .2rem .2rem 0 var(--secondary-color);
 	}
 
 	table thead {
