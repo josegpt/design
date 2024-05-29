@@ -263,14 +263,14 @@ button,
 summary,
 textarea,
 a[data-type="button"] {
-	box-shadow: .1rem .1rem 0 var(--interactive-color),
-		    .2rem .2rem 0 var(--interactive-color);
+	box-shadow: 0 .2rem 0 -.1rem var(--interactive-color),
+		    0 .4rem 0 -.2rem var(--interactive-color);
 }
 
 table tr,
 fieldset {
-	box-shadow: .1rem .1rem 0 var(--secondary-color),
-		    .2rem .2rem 0 var(--secondary-color);
+	box-shadow: 0 .2rem 0 -.1rem var(--secondary-color),
+		    0 .4rem 0 -.2rem var(--secondary-color);
 }
 
 input:hover,
@@ -292,8 +292,8 @@ a[data-type="button"]:hover,
 a[data-type="button"]:focus,
 a[data-type="button"]:focus-visible {
 	outline: none;
-	transform: translate(.1rem, .1rem);
-	box-shadow: .1rem .1rem 0 var(--secondary-color);
+	transform: translatey(.2rem);
+	box-shadow: 0 .2rem 0 -.1rem var(--secondary-color);
 }
 
 a:focus-visible {
@@ -336,8 +336,8 @@ table tr + tr,
 @media screen and (min-width: 40em) {
 	table {
 		border: .125rem solid var(--secondary-color);
-		box-shadow: .1rem .1rem 0 var(--secondary-color),
-			    .2rem .2rem 0 var(--secondary-color);
+		box-shadow: 0 .2rem 0 -.1rem var(--secondary-color),
+			    0 .4rem 0 -.2rem var(--secondary-color);
 	}
 
 	table thead {
