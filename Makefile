@@ -10,4 +10,4 @@ uninstall:
 	rm -f ${HTDOCSDIR}/*.html
 	rm -rf ${HTDOCSDIR}/static
 
-.PHONY: all static install uninstall
+.PHONY: install uninstall
