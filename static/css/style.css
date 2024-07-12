@@ -24,16 +24,22 @@
 }
 
 :root {
-	--primary-color: hsl(0 0% 99%);
-	--secondary-color: hsl(0 0 4%);
-	--a-color: hsl(240, 100%, 50%);
+	--primary-color: white;
+	--secondary-color: black;
+	--a-color: #06c;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
+	*,
+	*::before,
+	*::after {
+		color-scheme: dark;
+	}
+
 	:root {
-		--primary-color: hsl(0 0% 4%);
-		--secondary-color: hsl(0 0% 99%);
-		--a-color: hsl(199.5 100 66.9);
+		--primary-color: black;
+		--secondary-color: white;
+		--a-color: #0071e3;
 	}
 }
 
@@ -96,6 +102,12 @@ a {
 a:link,
 a:visited {
 	color: var(--a-color);
+	text-decoration: none;
+}
+
+a:link:hover,
+a:visited:hover {
+	text-decoration: underline;
 }
 
 u {
@@ -136,30 +148,28 @@ pre > code {
 	display: block;
 }
 
-input,
-table,
-select,
-textarea {
-	width: 100%;
-}
-
-a[data-type=button] {
+a[data-type=button],
+a[data-type=button]:hover {
 	line-height: normal;
 	text-decoration: none;
 }
 
 button,
-label p,
 table th,
+fieldset legend,
 table td::before,
 input[type=reset],
 input[type=submit],
 input[type=button],
 a[data-type=button] {
-	letter-spacing: .1rem;
-	font-size: .75em;
 	font-weight: bold;
-	text-transform: uppercase;
+}
+
+input,
+table,
+select,
+textarea {
+	width: 100%;
 }
 
 button,
@@ -182,12 +192,17 @@ input[type=checkbox] {
 	height: 1rem;
 	width: 1rem;
 	padding: .1rem;
-	appearance: none;
-	-webkit-appearance: none;
 }
 
 input[type=radio] {
 	border-radius: 50%;
+}
+
+input,
+button,
+select {
+	appearance: none;
+	-webkit-appearance: none;
 }
 
 code,
@@ -197,25 +212,26 @@ table tr {
 
 input,
 select,
+button,
 summary,
 textarea,
 table th,
 table td,
-pre > code {
-	padding: .5rem 1rem;
-}
-
-button,
+pre > code,
 input[type=reset],
 input[type=submit],
 input[type=button],
 a[data-type=button] {
-	padding: .5rem 2rem;
+	padding: .5rem 1rem;
 }
 
 body,
 fieldset {
 	padding: 1rem;
+}
+
+fieldset legend {
+	padding-inline: 1rem;
 }
 
 button,
@@ -235,10 +251,13 @@ input,
 button,
 select,
 textarea,
-::placeholder,
 code::selection {
 	color: var(--secondary-color);
 	background-color: var(--primary-color);
+}
+
+::placeholder {
+	opacity: .8;
 }
 
 code,
@@ -252,11 +271,21 @@ a[data-type=button] {
 	background-color: var(--secondary-color);
 }
 
+button[data-style=secondary],
+input[type=reset][data-style=secondary],
+input[type=submit][data-style=secondary],
+input[type=button][data-style=secondary],
+a[data-type=button][data-style=secondary] {
+	color: var(--secondary-color);
+	background-color: transparent;
+}
+
 input[type=radio]:checked,
 input[type=checkbox]:checked {
 	background-color: var(--secondary-color);
 }
 
+code,
 input,
 select,
 button,
@@ -266,6 +295,11 @@ fieldset,
 table tr,
 a[data-type=button] {
 	border: .0625rem solid var(--secondary-color);
+	border-radius: .4rem;
+}
+
+input[type=checkbox] {
+	border-radius: 0;
 }
 
 a:focus-visible,
@@ -288,7 +322,7 @@ a[data-type=button]:hover,
 a[data-type=button]:focus,
 a[data-type=button]:focus-visible {
 	outline: .0625rem dotted var(--secondary-color);
-	outline-offset: .2rem;
+	outline-offset: .1rem;
 }
 
 input:invalid,
@@ -316,7 +350,6 @@ table td {
 table td::before {
 	content: attr(data-label);
 	float: left;
-	line-height: 2.3em;
 }
 
 table tr + tr,
