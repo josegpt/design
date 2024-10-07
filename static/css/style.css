@@ -75,7 +75,7 @@ body {
 	margin-inline: auto;
 	max-width: 60rem;
 	line-height: 1.6;
-	padding: 0.8rem;
+	padding: 2rem;
 	color: var(--color-950);
 	background-color: var(--color-50);
 }
