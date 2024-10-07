@@ -20,13 +20,30 @@
 	box-sizing: inherit;
 	margin: 0;
 	padding: 0;
+	tap-highlight-color: transparent;
 	-webkit-tap-highlight-color: transparent;
 }
 
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
 :root {
-	--primary-color: white;
-	--secondary-color: black;
-	--a-color: #06c;
+	--color-50: rgb(250 250 250);
+	--color-100: rgb(245 245 245);
+	--color-200: rgb(229 229 229);
+	--color-300: rgb(212 212 212);
+	--color-400: rgb(163 163 163);
+	--color-500: rgb(115 115 115);
+	--color-600: rgb(82 82 82);
+	--color-700: rgb(64 64 64);
+	--color-800: rgb(38 38 38);
+	--color-900: rgb(23 23 23);
+	--color-950: rgb(10 10 10);
+	--color-accent: red;
+
+	--border-thickness: 0.185rem;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -37,32 +54,43 @@
 	}
 
 	:root {
-		--primary-color: black;
-		--secondary-color: white;
-		--a-color: #0071e3;
+		--color-50: rgb(10 10 10);
+		--color-100: rgb(23 23 23);
+		--color-200: rgb(38 38 38);
+		--color-300: rgb(64 64 64);
+		--color-400: rgb(82 82 82);
+		--color-500: rgb(115 115 115);
+		--color-600: rgb(163 163 163);
+		--color-700: rgb(212 212 212);
+		--color-800: rgb(229 229 229);
+		--color-900: rgb(245 245 245);
+		--color-950: rgb(250 250 250);
 	}
-}
-
-html {
-	box-sizing: border-box;
-	scroll-behavior: smooth;
 }
 
 body {
 	font-family: sans-serif;
+	font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
 	margin-inline: auto;
-	max-width: 80ch;
+	max-width: 60rem;
 	line-height: 1.6;
+	padding: 0.8rem;
+	color: var(--color-950);
+	background-color: var(--color-50);
 }
 
-input,
-button,
-select,
-textarea {
-	font-family: inherit;
-	font-size: inherit;
+::selection {
+	color: var(--color-50);
+	background-color: var(--color-950);
 }
+
+.logo {
+	font-family: monospace;
+	font-size: 1.425em;
+}
+
+/* headings */
 
 h1 {
 	font-size: 3em;
@@ -75,7 +103,7 @@ h2 {
 h3 {
 	font-size: 2em;
 }
- 
+
 h4 {
 	font-size: 1.825em;
 }
@@ -88,42 +116,107 @@ h6 {
 	font-size: 1.4em;
 }
 
-svg {
-	overflow: visible;
-	color: var(--secondary-color);
-}
+/* anchor */
 
-u,
 a {
-	text-underline-offset: .3rem;
-	text-decoration-thickness: .0625rem;
-}
- 
-a:link,
-a:visited {
-	color: var(--a-color);
-	text-decoration: none;
+	color: var(--color-900);
+	text-underline-offset: 0.1rem;
+	outline: none;
 }
 
-a:link:hover,
-a:visited:hover {
-	text-decoration: underline;
+a:focus,
+a:hover,
+a:focus-visible {
+	text-decoration-color: var(--color-accent);
 }
+
+/* underline */
 
 u {
 	text-decoration-style: dotted;
+	text-underline-offset: 0.1rem;
 }
 
+/* button */
+
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"],
+a[data-type="button"] {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: bold;
+	appearance: none;
+	-webkit-appearance: none;
+	width: auto;
+	padding: 0.4rem 1rem;
+	border: var(--border-thickness) solid var(--color-200);
+	background-color: var(--color-200);
+	color: inherit;
+	border-radius: 4rem;
+	line-height: normal;
+	text-decoration: none;
+	cursor: pointer;
+	user-select: none;
+	outline: none;
+}
+
+button[data-style="secondary"],
+input[type="submit"][data-style="secondary"],
+input[type="button"][data-style="secondary"],
+input[type="reset"][data-style="secondary"],
+a[data-type="button"][data-style="secondary"] {
+	background-color: transparent;
+}
+
+button[data-style="tertiary"],
+input[type="submit"][data-style="tertiary"],
+input[type="button"][data-style="tertiary"],
+input[type="reset"][data-style="tertiary"],
+a[data-type="button"][data-style="tertiary"] {
+	background-color: transparent;
+	border-color: transparent;
+	text-decoration: underline;
+}
+
+button:hover,
+button:focus,
+button:focus-visible,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:focus-visible,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:focus-visible,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="button"]:focus-visible,
+a[data-type="button"]:hover,
+a[data-type="button"]:focus,
+a[data-type="button"]:focus-visible {
+	border-color: var(--color-accent);
+}
+
+/* code */
+
 pre > code {
+	display: block;
 	white-space: pre;
+	border-radius: 0.4rem;
+	padding: 0.8rem;
 }
 
 code {
 	overflow: auto;
+	background-color: var(--color-200);
+	padding-inline: 0.1em;
 }
 
+/* list */
+
 ul {
-	list-style: square inside;
+	list-style: circle inside;
 }
 
 ol {
@@ -133,207 +226,161 @@ ol {
 ol ol,
 ol ul,
 ul ul,
-ul ol,
+ul ol {
+	margin-inline: 2rem;
+}
+
+/* details */
+
 details p,
 details ul,
 details ol,
 details details {
+	padding-block: 0.4rem;
 	margin-inline: 2rem;
 }
 
-label,
-table td,
-table tr,
-pre > code {
-	display: block;
+summary {
+	border-radius: 0.4rem;
+	font-weight: bold;
+	padding: 0.8rem;
+	cursor: pointer;
+	user-select: none;
+	background-color: var(--color-200);
+	border: var(--border-thickness) solid var(--color-200);
+	outline: none;
 }
 
-a[data-type=button],
-a[data-type=button]:hover {
-	line-height: normal;
-	text-decoration: none;
+summary:hover,
+summary:focus,
+summary:focus-visible {
+	border-color: var(--color-accent);
 }
 
-button,
-table th,
-fieldset legend,
-table td::before,
-input[type=reset],
-input[type=submit],
-input[type=button],
-a[data-type=button] {
+/* fieldset */
+
+fieldset {
+	border: none;
+}
+
+legend {
+	font-size: 1.825em;
+	padding-right: 1rem;
 	font-weight: bold;
 }
 
+/* input */
+
+label {
+	display: block;
+	border-radius: 0.4rem;
+	cursor: pointer;
+	user-select: none;
+	background-color: var(--color-100);
+	border: var(--border-thickness) solid var(--color-100);
+	padding: 0.5rem 1rem;
+}
+
+label p {
+	color: var(--color-700);
+	font-size: 0.8em;
+}
+
+label select,
+label textarea,
+label input[type="tel"],
+label input[type="text"],
+label input[type="date"],
+label input[type="email"],
+label input[type="search"],
+label input[type="number"],
+label input[type="password"] {
+	padding-block: 0.4rem;
+}
+
+label:has(input[type="radio"]),
+label:has(input[type="checkbox"]) {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	background-color: transparent;
+	border: var(--border-thickness) solid var(--color-50);
+}
+
 input,
-table,
 select,
 textarea {
+	background-color: transparent;
+	color: inherit;
+	border: none;
+	outline: none;
+	font-family: inherit;
+	font-size: inherit;
 	width: 100%;
 }
 
-button,
-input[type=reset],
-input[type=submit],
-input[type=button],
-a[data-type=button] {
-	width: auto;
-}
-
-input:disabled,
-input:disabled:hover,
-input:disabled:focus,
-input:disabled:focus-visible {
-	border-style: dotted;
-}
- 
-input[type=radio],
-input[type=checkbox] {
+input[type="radio"],
+input[type="checkbox"] {
 	height: 1rem;
 	width: 1rem;
-	padding: .1rem;
+	padding: 0.1rem;
+	appearance: none;
+	-webkit-appearance: none;
+	cursor: pointer;
+	user-select: none;
+	border: var(--border-thickness) solid var(--color-200);
 }
 
-input[type=radio] {
+input[type="radio"] {
 	border-radius: 50%;
 }
 
-input,
-button,
-select {
-	appearance: none;
-	-webkit-appearance: none;
+input[type="checkbox"] {
+	border-radius: 0.2rem;
 }
 
-code,
-table tr {
-	padding: .2rem;
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+	background-color: var(--color-800);
 }
 
-input,
-select,
-button,
-summary,
-textarea,
-table th,
-table td,
-pre > code,
-input[type=reset],
-input[type=submit],
-input[type=button],
-a[data-type=button] {
-	padding: .5rem 1rem;
+label:has(input:disabled) {
+	cursor: not-allowed;
 }
 
-body,
-fieldset {
-	padding: 1rem;
+label:has(input:invalid),
+label:has(select:invalid),
+label:has(textarea:invalid) {
+	border-color: orange;
 }
 
-fieldset legend {
-	padding-inline: 1rem;
+label:focus,
+label:hover,
+label:focus-within,
+label:focus-visible,
+label:focus:has(input[type="radio"]),
+label:hover:has(input[type="radio"]),
+label:focus-within:has(input[type="radio"]),
+label:focus-visible:has(input[type="radio"]),
+label:focus:has(input[type="checkbox"]),
+label:hover:has(input[type="checkbox"]),
+label:focus-within:has(input[type="checkbox"]),
+label:focus-visible:has(input[type="checkbox"]) {
+	border-color: var(--color-accent);
 }
 
-button,
-summary,
-input[type=radio],
-input[type=reset],
-input[type=submit],
-input[type=button],
-a[data-type=button],
-input[type=checkbox] {
-	cursor: pointer;
-	user-select: none;
-}
-
-body,
-input,
-button,
-select,
-textarea,
-code::selection {
-	color: var(--secondary-color);
-	background-color: var(--primary-color);
-}
-
-::placeholder {
-	opacity: .8;
-}
-
-code,
-button,
-::selection,
-input[type=reset],
-input[type=submit],
-input[type=button],
-a[data-type=button] {
-	color: var(--primary-color);
-	background-color: var(--secondary-color);
-}
-
-button[data-style=secondary],
-input[type=reset][data-style=secondary],
-input[type=submit][data-style=secondary],
-input[type=button][data-style=secondary],
-a[data-type=button][data-style=secondary] {
-	color: var(--secondary-color);
-	background-color: transparent;
-}
-
-input[type=radio]:checked,
-input[type=checkbox]:checked {
-	background-color: var(--secondary-color);
-}
-
-code,
-input,
-select,
-button,
-summary,
-textarea,
-fieldset,
-table tr,
-a[data-type=button] {
-	border: .0625rem solid var(--secondary-color);
-	border-radius: .4rem;
-}
-
-input[type=checkbox] {
-	border-radius: 0;
-}
-
-a:focus-visible,
-input:hover,
-input:focus,
-input:focus-visible,
-button:hover,
-button:focus,
-button:focus-visible,
-select:hover,
-select:focus,
-select:focus-visible,
-summary:hover,
-summary:focus,
-summary:focus-visible,
-textarea:hover,
-textarea:focus,
-textarea:focus-visible,
-a[data-type=button]:hover,
-a[data-type=button]:focus,
-a[data-type=button]:focus-visible {
-	outline: .0625rem dotted var(--secondary-color);
-	outline-offset: .1rem;
-}
-
-input:invalid,
-select:invalid,
-textarea:invalid {
-	border-style: dashed;
-}
+/* table */
 
 table {
 	border-collapse: separate;
 	border-spacing: 0;
+	width: 100%;
+}
+
+table td,
+table tr {
+	display: block;
+	padding: 0.4rem;
 }
 
 table thead {
@@ -343,12 +390,22 @@ table thead {
 	overflow: hidden;
 }
 
+table th {
+	font-weight: bold;
+}
+
+table tr {
+	border-radius: 0.4rem;
+	background-color: var(--color-200);
+}
+
 table td {
 	text-align: right;
 }
- 
+
 table td::before {
 	content: attr(data-label);
+	font-weight: bold;
 	float: left;
 }
 
@@ -367,8 +424,21 @@ table tr + tr,
 	table th,
 	table td {
 		display: table-cell;
-		border-bottom: .0625rem solid var(--secondary-color);
 		padding: 1rem;
+	}
+
+	table th:first-child {
+		border-top-left-radius: 0.4rem;
+		border-bottom-left-radius: 0.4rem;
+	}
+
+	table th:last-child {
+		border-top-right-radius: 0.4rem;
+		border-bottom-right-radius: 0.4rem;
+	}
+
+	table tbody tr {
+		background-color: transparent;
 	}
 
 	table tr {
@@ -386,13 +456,23 @@ table tr + tr,
 	}
 }
 
+/* helpers */
+
+.text\:wrap {
+	max-width: 72ch;
+}
+
+.text-align\:center {
+	text-align: center;
+}
+
 .grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(min(24ch, 100%), 1fr));
 	align-content: start;
 }
 
-.grid[data-layout=fill] {
+.grid[data-layout="fill"] {
 	grid-template-columns: repeat(auto-fill, minmax(min(24ch, 100%), 1fr));
 }
 
@@ -401,16 +481,20 @@ table tr + tr,
 	align-items: flex-start;
 }
 
-.cluster[data-justify=space-between] {
+.cluster[data-justify="space-between"] {
 	justify-content: space-between;
 }
 
-.cluster[data-justify=center] {
+.cluster[data-justify="center"] {
 	justify-content: center;
 }
 
-.cluster[data-align=center] {
+.cluster[data-align="center"] {
 	align-items: center;
+}
+
+.cluster[data-align="baseline"] {
+	align-items: baseline;
 }
 
 .cover {
@@ -433,29 +517,13 @@ table tr + tr,
 	margin-block: 1rem;
 }
 
-.with-sidebar > :first-child {
-	flex-basis: 0;
-	flex-grow: 999;
-	min-inline-size: 60%;
-}
-
-.with-sidebar > :last-child {
-	flex-basis: 10rem;
-}
-
-.with-sidebar > :last-child {
-	flex-grow: 1;
-}
-
-.cluster,
-.with-sidebar {
+.cluster {
 	flex-wrap: wrap;
 }
 
 .cover,
 .stack,
-.cluster,
-.with-sidebar {
+.cluster {
 	display: flex;
 }
 
@@ -465,12 +533,7 @@ table tr + tr,
 }
 
 .grid,
-.cluster,
-.with-sidebar {
+.cluster {
 	gap: 1rem;
 }
 
-a[data-type=button],
-.text-align\:center {
-	text-align: center;
-}

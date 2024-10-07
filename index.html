@@ -2,30 +2,26 @@
 <html lang="en">
 <meta charset="utf-8">
 
-<title>Exor &sol; Design</title>
+<title>exor &sol; Design</title>
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<meta name="robots" content="nofollow">
+<meta content="nofollow" name="robots">
 <meta content="josegpt" name="author">
-<meta content="Exor &sol; Design" name="description">
+<meta content="exor &sol; Design" name="description">
 <meta content="C, HTML, CSS" name="keywords">
 <meta content="#0a0a0a" name="theme-color">
 <meta content="website" property="og:type">
-<meta content="Exor &sol; Design" property="og:title">
+<meta content="exor &sol; Design" property="og:title">
 <meta content="https://design.Exor.dev" property="og:url">
-<meta content="Exor &sol; Design" property="og:description">
+<meta content="exor &sol; Design" property="og:description">
 <meta content="/static/img/banner.png" property="og:image">
 <link rel="icon" href="/static/img/logo.svg">
 <link rel="mask-icon" href="/static/img/logo.svg" color="#0a0a0a">
 <link rel="preload stylesheet" type="text/css" as="style" href="/static/css/style.css">
 
 <body class="cover">
-<header data-align="center" data-justify="space-between" class="cluster">
-<nav data-align="center" class="cluster">
-<a href="/" class="cluster">
-<svg width="24" height="24" viewBox="0 0 48.5 61.5">
-<use href="/static/img/logo.svg#logo" xlink:href="/static/img/logo.svg#logo">
-</svg>
-</a>
+<header data-align="baseline" data-justify="space-between" class="cluster">
+<nav data-align="baseline" class="cluster">
+<a href="/" class="logo">exor</a>
 <div>
 <span>Design</span>
 </div>
@@ -39,8 +35,10 @@
 
 <search>
 <form class="with-sidebar">
-<input type="search" placeholder="Search...">
-<input type="submit" value="Search">
+<label>
+<p>Search</p>
+<input type="search" placeholder="josegpt, e.g.">
+</label>
 </form>
 </search>
 
@@ -80,7 +78,7 @@
 
 <section>
 <h1>Title</h1>
-<p>
+<p class="text:wrap">
 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
 accusamus accusantium <a href="#">sit unde</a> assumenda soluta <code>voluptatum voluptatibus</code>
 aliquid tempore quae, ducimus officia magnam, alias qui voluptas
@@ -88,7 +86,6 @@ consequatur laborum rerum earum.
 </section>
 
 <form class="stack">
-<section class="grid">
 <label>
 <p>First Name</p>
 <input type="text" placeholder="John">
@@ -113,19 +110,18 @@ consequatur laborum rerum earum.
 <p>Date</p>
 <input type="date" placeholder="Date">
 </label>
-</section>
-<fieldset class="grid">
+<fieldset class="stack">
 <legend>Information</legend>
 <label>
 <p>Email</p>
 <input type="email" placeholder="test@exor.dev">
 </label>
 <label>
-<p>Password <b>Required</b></p>
+<p>Password *</p>
 <input type="password" placeholder="p@ssw0rd" required>
 </label>
 <label>
-<p>Email <em>Disabled</em></p>
+<p>Email - </p>
 <input type="email" placeholder="test@exor.dev" disabled>
 </label>
 <label>
@@ -137,28 +133,22 @@ consequatur laborum rerum earum.
 </fieldset>
 <label>
 <p>Message</p>
-<textarea placeholder="Hey Exor!"></textarea>
+<textarea placeholder="Hey exor!"></textarea>
 </label>
-<footer data-justify="space-between" data-align="center" class="cluster">
-<section>
-<input type="submit">
-<input data-style="secondary" type="reset">
-</section>
-<section class="cluster">
-<label data-align="center" class="cluster">
+<label>
 <input name="radio" type="radio">
 <span>Radio</span>
 </label>
-<label data-align="center" class="cluster">
+<label>
 <input name="radio" type="radio">
 <span>Radio</span>
 </label>
-</section>
-<label data-align="center" class="cluster">
+<label>
 <input type="checkbox">
 <span>Send a copy to yourself</span>
 </label>
-</footer>
+<input type="submit">
+<input data-style="secondary" type="reset">
 </form>
 
 <section class="cluster">
@@ -186,14 +176,14 @@ consequatur laborum rerum earum.
 	background-color: red;
 }</code></pre>
 
-<details class="stack">
+<details>
 <summary>Details</summary>
 <p>Description
- <details class="stack">
+ <details>
  <summary>Details</summary>
  <p>Description
  </details>
- <details class="stack">
+ <details>
  <summary>Details</summary>
  <p>Description
  </details>
