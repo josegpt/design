@@ -144,22 +144,24 @@ input[type="reset"],
 input[type="submit"],
 input[type="button"],
 a[data-type="button"] {
-	font-family: inherit;
-	font-size: inherit;
-	font-weight: bold;
-	appearance: none;
 	-webkit-appearance: none;
-	width: auto;
-	padding: 0.4rem 1rem;
-	border: var(--border-thickness) solid var(--color-200);
-	background-color: var(--color-200);
-	color: inherit;
-	border-radius: 4rem;
-	line-height: normal;
-	text-decoration: none;
+	appearance: none;
+	background-color: var(--color-950);
+	border-radius: .4rem;
+	border: var(--border-thickness) solid var(--color-950);
+	color: var(--color-50);
 	cursor: pointer;
-	user-select: none;
+	font-family: inherit;
+	font-size: 0.725em;
+	font-weight: bold;
+	line-height: normal;
 	outline: none;
+	padding: 0.8rem 2rem;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	user-select: none;
+	width: auto;
 }
 
 button[data-style="secondary"],
@@ -168,6 +170,7 @@ input[type="button"][data-style="secondary"],
 input[type="reset"][data-style="secondary"],
 a[data-type="button"][data-style="secondary"] {
 	background-color: transparent;
+	color: var(--color-950);
 }
 
 button[data-style="tertiary"],
@@ -177,6 +180,7 @@ input[type="reset"][data-style="tertiary"],
 a[data-type="button"][data-style="tertiary"] {
 	background-color: transparent;
 	border-color: transparent;
+	color: var(--color-950);
 	text-decoration: underline;
 }
 
