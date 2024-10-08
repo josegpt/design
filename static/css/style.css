@@ -20,7 +20,6 @@
 	box-sizing: inherit;
 	margin: 0;
 	padding: 0;
-	tap-highlight-color: transparent;
 	-webkit-tap-highlight-color: transparent;
 }
 
@@ -43,7 +42,7 @@ html {
 	--color-950: rgb(10 10 10);
 	--color-accent: red;
 
-	--border-thickness: 0.185rem;
+	--border-thickness: 0.1rem;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -69,15 +68,14 @@ html {
 }
 
 body {
-	font-family: sans-serif;
-	font-smoothing: antialiased;
 	-webkit-font-smoothing: antialiased;
+	background-color: var(--color-50);
+	color: var(--color-950);
+	font-family: sans-serif;
+	line-height: 1.6;
 	margin-inline: auto;
 	max-width: 60rem;
-	line-height: 1.6;
-	padding: 2rem;
-	color: var(--color-950);
-	background-color: var(--color-50);
+	padding: 1.125rem;
 }
 
 ::selection {
@@ -245,14 +243,13 @@ details details {
 }
 
 summary {
-	border-radius: 0.4rem;
-	font-weight: bold;
-	padding: 0.8rem;
-	cursor: pointer;
-	user-select: none;
 	background-color: var(--color-200);
+	border-radius: 0.4rem;
 	border: var(--border-thickness) solid var(--color-200);
+	cursor: pointer;
 	outline: none;
+	padding: 0.8rem;
+	user-select: none;
 }
 
 summary:hover,
@@ -413,8 +410,7 @@ table td::before {
 	float: left;
 }
 
-table tr + tr,
-.stack > * + * {
+table tr + tr {
 	margin-block-start: 1rem;
 }
 
@@ -548,3 +544,6 @@ table tr + tr,
 	gap: 1rem;
 }
 
+.stack > * + * {
+	margin-block-start: 1rem;
+}
