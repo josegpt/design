@@ -2,41 +2,53 @@
 <html lang=en>
 <meta charset=utf-8>
 
-<title>pz &sol; Design</title>
+<title>Design</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="nofollow">
 <meta name="author" content="josegpt">
-<meta name="description" content="pz &sol; Design">
-<meta name="keywords" content="C, HTML, CSS">
-<meta name="theme-color" content="#000">
+<meta name="description" content="Design">
+<meta name="keywords" content="HTML, CSS, C, Web, Services">
+<meta name="theme-color" content="#d0021b">
 <meta property="og:type" content="website">
-<meta property="og:title" content="pz &sol; Design">
+<meta property="og:title" content="Design">
 <meta property="og:url" content="https://design.pz.do">
-<meta property="og:description" content="pz &sol; Design">
+<meta property="og:description" content="Design">
 <meta property="og:image" content="/static/img/banner.png">
-<link rel="icon" href="/static/img/logo.svg">
-<link rel="mask-icon" href="/static/img/logo.svg" color="#000">
-<link rel="preload stylesheet" type="text/css" as="style" href="/static/css/style.css">
+<link rel="icon" href="/static/img/favicon.ico">
+<link rel="preload" as="style" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/style.css">
 
 <body>
-<article class=b>Banner</article>
-<header>
-<a href=/>
-<h1>pz</h1>
+<article class=banner>Banner</article>
+<header class=stack>
+<nav data-align=center data-justify=space-between class=cluster>
+<a href=/ data-style=tertiary class=logo>
+<img src=/static/img/logo.webp alt=pz>
 </a>
-<nav>
-<a href=/>Typo</a>
-<a href=/b.html>Btns</a>
-<a href=/f.html>Form</a>
-<a href=/l.html>List</a>
-<a href=/c.html>Code</a>
-<a href=/d.html data-style=active>Detail</a>
-<a href=/t.html>Table</a>
+<article>
+<span>Design</span>
+</article>
+</nav>
+<nav class=grid>
+<a data-style=secondary href=/>Text</a>
+<a data-style=secondary href=/b.html>Button</a>
+<a data-style=secondary href=/f.html>Form</a>
+<a data-style=secondary href=/l.html>List</a>
+<a data-style=secondary href=/c.html>Code Block</a>
+<a href=/d.html>Detail</a>
+<a data-style=secondary href=/t.html>Table</a>
 </nav>
 </header>
 
 <main>
+<hgroup>
+<h1>Detail</h1>
+<p>A set of headings, vertically stacked, that each reveal an
+related section of content. Commonly referred to as an accordion.
+</hgroup>
+
 <section>
+<h2>Default</h2>
+<article class=box>
 <details>
 <summary>Question A</summary>
 <p>
@@ -51,5 +63,6 @@ ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate
 velit esse cillum dolore eu fugiat nulla pariatur.
 </details>
+</article>
 </section>
 </main>

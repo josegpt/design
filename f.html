@@ -2,50 +2,52 @@
 <html lang=en>
 <meta charset=utf-8>
 
-<title>pz &sol; Design</title>
+<title>Design</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="nofollow">
 <meta name="author" content="josegpt">
-<meta name="description" content="pz &sol; Design">
-<meta name="keywords" content="C, HTML, CSS">
-<meta name="theme-color" content="#000">
+<meta name="description" content="Design">
+<meta name="keywords" content="HTML, CSS, C, Web, Services">
+<meta name="theme-color" content="#d0021b">
 <meta property="og:type" content="website">
-<meta property="og:title" content="pz &sol; Design">
+<meta property="og:title" content="Design">
 <meta property="og:url" content="https://design.pz.do">
-<meta property="og:description" content="pz &sol; Design">
+<meta property="og:description" content="Design">
 <meta property="og:image" content="/static/img/banner.png">
-<link rel="icon" href="/static/img/logo.svg">
-<link rel="mask-icon" href="/static/img/logo.svg" color="#000">
-<link rel="preload stylesheet" type="text/css" as="style" href="/static/css/style.css">
+<link rel="icon" href="/static/img/favicon.ico">
+<link rel="preload" as="style" href="/static/css/style.css">
+<link rel="stylesheet" href="/static/css/style.css">
 
 <body>
-<article class=b>Banner</article>
-<header>
-<a href=/>
-<h1>pz</h1>
+<article class=banner>Banner</article>
+<header class=stack>
+<nav data-align=center data-justify=space-between class=cluster>
+<a href=/ data-style=tertiary class=logo>
+<img src=/static/img/logo.webp alt=pz>
 </a>
-<nav>
-<a href=/>Typo</a>
-<a href=/b.html>Btns</a>
-<a href=/f.html data-style=active>Form</a>
-<a href=/l.html>List</a>
-<a href=/c.html>Code</a>
-<a href=/d.html>Detail</a>
-<a href=/t.html>Table</a>
+<article>
+<span>Design</span>
+</article>
+</nav>
+<nav class=grid>
+<a data-style=secondary href=/>Text</a>
+<a data-style=secondary href=/b.html>Button</a>
+<a href=/f.html>Form</a>
+<a data-style=secondary href=/l.html>List</a>
+<a data-style=secondary href=/c.html>Code Block</a>
+<a data-style=secondary href=/d.html>Detail</a>
+<a data-style=secondary href=/t.html>Table</a>
 </nav>
 </header>
 
 <main>
-<section>
-<search>
-<form>
-<label>
-<p>Search</p>
-<input type=search placeholder="josegpt, e.g.">
-</label>
-</form>
-</search>
+<hgroup>
+<h1>Table</h1>
+<p>Retrieve text input from a user.
+</hgroup>
 
+<section>
+<h2>Default</h2>
+<article class=box>
 <form>
 <label>
 <p>Firstname</p>
@@ -82,8 +84,8 @@
 <input type=password placeholder=p@ssw0rd required>
 </label>
 <label>
-<p>Email-</p>
-<input type=email placeholder=jose@pz.do disabled>
+<p>Email</p>
+<input type=email placeholder=jose@pz.do value=hey disabled>
 </label>
 <label>
 <p>Reason for contacting</p>
@@ -111,5 +113,20 @@
 <input type=submit>
 <input data-style=secondary type=reset>
 </form>
+</article>
+</section>
+
+<section>
+<h2>Search</h2>
+<article class=box>
+<search>
+<form>
+<label>
+<p>Search</p>
+<input type=search placeholder="josegpt, e.g.">
+</label>
+</form>
+</search>
+</article>
 </section>
 </main>
